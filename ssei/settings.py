@@ -96,16 +96,13 @@ WSGI_APPLICATION = 'ssei.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'dburqrm20l79td',
+        'NAME': 'd8imng26qfp5hm',
         'USER':'elfuompccwcung',
-        'PASSWORD':'73d86b04f7fb49d35630257760a0c7ff2de7e8a9e73d318bd17f6e3af5bae058',
-        'HOST':'ec2-54-243-216-33.compute-1.amazonaws.com',
+        'PASSWORD':'a75420eeaaecace67c5587a1c95a683bc309433d1eaef6c98571d095f924eb83',
+        'HOST':'ec2-54-235-156-60.compute-1.amazonaws.com',
         'PORT':'5432',
     }
 }
-
-
-
 
 
 # Password validation
