@@ -94,18 +94,8 @@ WSGI_APPLICATION = 'ssei.wsgi.application'
  """
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'sseidb',
-        'USER':'postgres',
-        'PASSWORD':'1234',
-        'HOST':'localhost',
-        'PORT':'5432',
-    }
 
-}
-
-'''     'default': {
+     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'd8imng26qfp5hm',
         'USER':'dzhzauideqvjxz',
@@ -113,7 +103,19 @@ DATABASES = {
         'HOST':'ec2-54-235-156-60.compute-1.amazonaws.com',
         'PORT':'5432',
     }
+ 
+
+'''     'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'sseidb',
+        'USER':'postgres',
+        'PASSWORD':'1234',
+        'HOST':'localhost',
+        'PORT':'5432',
+    }
  '''
+}
+
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
