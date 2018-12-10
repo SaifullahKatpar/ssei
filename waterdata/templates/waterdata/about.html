@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+<head>
+	<title>Semantic Search Engine for Irrigation</title>
+	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+	<style type="text/css">
+		section#tools img{
+			width:150px;
+		}
+	</style>
+</head>
+<body class="bg-light">
+<div class="container">
+
+			<section class="container">
+				<blockquote class="blockquote">
+				Properly designed, the Semantic Web can assist the evolution of human knowledge as a whole.
+				</blockquote>
+				<div class="blockquote-footer text-info">
+					The Semantic Web, Scientific American
+				</div>
+			</section>
+			<br>
+			<section class="container" id="introduction">
+				<h1 class="text-center text-danger">Welcome to SSEI</h1>
+				<p class="lead"><strong>Semantic Search Engine for Irrigation</strong> is the Search Engine for querying Irrigation Data (currently limited to USA) stored in a RDF Triple Store. The data format is based on the <em>Semantic Web Standards</em>. </p>
+				<section class="container">
+					<figure class="img-fluid text-center">
+						<img src="{% static 'images/readme.png' %}" class="figure-img">
+						<figcaption class="figure-caption">
+							README on GitHub Repository of <em>SSEI</em>
+						</figcaption>
+					</figure>
+				</section>
+			</section>
+
+			<br>
+			<section class="container" id="tools">
+				<div class="h2 text-center">
+					Tools and Platforms
+				</div>
+				<br>
+				<div class="row">
+					<div class="col">
+							<article>
+									<img class="mx-auto" src="{% static 'images/protege.ico' %}" alt="Icon"></img>
+							</article>
+					</div>
+					<div class="col">
+							<article>
+									<img class="mx-auto" src="{% static 'images/django.png'%}" alt="Icon"></img>
+							</article>
+					</div>
+					<div class="col">
+							<article>
+									<img class="mx-auto" src="{% static 'images/postgresql.png' %}" alt="Icon"></img>
+							</article>
+					</div>
+					<div class="col">
+							<article>
+									<img class="mx-auto" src="{% static 'images/heroku.png'  %}" alt="Icon"></img>
+							</article>
+					</div>
+
+					<div class="col">
+						<div class="row">
+							<article>
+									<img class="mx-auto" src="{% static 'images/owl.svg' %}" alt="Icon"></img>
+							</article>
+						</div>
+						<br>
+						<div class="row">
+							<article>
+									<img class="mx-auto" src="{% static 'images/sparql.svg' %}" alt="Icon"></img>
+							</article>
+						</div>
+						<br>
+						<div class="row">
+							<article>
+									<img class="mx-auto" src="{% static 'images/rdf.svg' %}" alt="Icon"></img>
+							</article>
+						</div>
+					</div>
+
+				</div>
+				<br>
+				<div class="row">
+					<div class="col">
+						<article>
+								<img class="mx-auto" src="{% static 'images/ajax.png' %}" alt="Icon"></img>
+						</article>
+					</div>
+					<div class="col">
+						<article>
+								<img class="mx-auto" src="{% static 'images/pandas.png' %}" alt="Icon"></img>
+						</article>
+					</div>
+					<div class="col">
+						<article>
+								<img class="mx-auto" src="{% static 'images/bootstrap.png' %}" alt="Icon"></img>
+						</article>
+					</div>
+					<div class="col">
+						<article>
+								<img class="mx-auto" src="{% static 'images/d3.png' %}" alt="Icon"></img>
+						</article>
+					</div>
+
+				</div>
+
+			</section>
+
+</div>
+
+
+</body>
+
+	<script src="{% static 'jquery-3.3.1.min.js' %}"></script>
+	<script src="{% static 'popper.min' %}"></script>
+	<script src="{% static 'js/bootstrap.bundle.min' %}"></script>
+
+</html>
