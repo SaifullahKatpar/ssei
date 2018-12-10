@@ -1,0 +1,24 @@
+
+{% extends 'waterdata/base.html' %}
+
+{% block title %}
+<title>Ontology Detail</title>
+{% endblock %}
+
+
+{% block content %}
+
+	<div class="container-fluid">
+		<h1> {{ ontology.name|capfirst }}</h1>
+		<a href="{{ontology.uri}}"> {{ ontology.uri }}</a>
+		<br>
+		{% if ontology.authors %}
+			Authors: 	
+			<p>
+			{% for author in  ontology.authors.all %}
+				 {{ author|capfirst }}<br>			 
+			{% endfor %}
+			</p>
+		{% endif %}
+	</div>
+{% endblock %}

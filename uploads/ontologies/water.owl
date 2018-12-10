@@ -1,0 +1,2154 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#"
+     xml:base="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:uo="http://purl.obolibrary.org/obo/uo#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:obo="http://purl.obolibrary.org/obo/">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18">
+        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/uo/releases/2018-03-24/uo.owl"/>
+        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/uo/releases/2018-05-20/uo.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/uo#is_unit_of -->
+
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/uo#is_unit_of">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#has_unit"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#affects -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#affects">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Atmosphere"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Cryosphere"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Hydrosphere"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Lithosphere"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#has_atmospheric_condition -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#has_atmospheric_condition">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#is_atmospheric_condition_of"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Atmosphere"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Atomospheric_Condition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#has_capital_city -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#has_capital_city">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#has_city"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#is_capital_city_of"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Country"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#District"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Province"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#State"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#has_city -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#has_city">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#has_region"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#County"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#City"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#has_country -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#has_country">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#has_region"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Continent"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Country"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#has_county -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#has_county">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#has_region"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Province"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#State"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#County"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#District"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#has_district -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#has_district">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#has_region"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Province"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#State"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#County"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#District"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#has_hydrologic_unit_code -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#has_hydrologic_unit_code">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Hydrologic_Unit"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Hydrologic_Unit_Code"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#has_measurment -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#has_measurment"/>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#has_province -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#has_province">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#has_region"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#is_province_of"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Country"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Province"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#has_region -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#has_region">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Land_Mass"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Region"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#has_site -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#has_site">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#has_region"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#County"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#District"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#State"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Site"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#has_site_type -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#has_site_type"/>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#has_source -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#has_source">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#is_source_of"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Fresh_Water"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Percipitation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#has_state -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#has_state">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#has_region"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#is_state_of"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Country"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#State"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#has_territory -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#has_territory">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#has_region"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Country"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Territory"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#has_unit -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#has_unit"/>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#involves -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#involves">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Water_Cycle"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Water"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#is_atmospheric_condition_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#is_atmospheric_condition_of">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Atomospheric_Condition"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Atmosphere"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#is_capital_city_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#is_capital_city_of">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#is_city_of"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#City"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Country"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#District"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Province"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#State"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#is_city_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#is_city_of">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#is_region_of"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#City"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#County"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#District"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#is_country_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#is_country_of">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#is_region_of"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Continent"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Country"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#is_county_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#is_county_of">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#is_region_of"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Province"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#State"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#County"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#is_district_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#is_district_of">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#is_region_of"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#District"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Province"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#State"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#is_located_in -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#is_located_in">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Site"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#City"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Continent"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Country"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#County"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#District"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Province"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#State"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Territory"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#is_province_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#is_province_of">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#is_region_of"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Province"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Country"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#is_recharged_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#is_recharged_by">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#recharges"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Aquifer"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Infiltration"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#is_region_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#is_region_of">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Region"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Land_Mass"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#is_site_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#is_site_of">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#is_region_of"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Site"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#County"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#District"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#is_source_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#is_source_of">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Percipitation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Fresh_Water"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#is_state_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#is_state_of">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#is_region_of"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#State"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Country"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#is_territory_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#is_territory_of">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#is_region_of"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Territory"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Country"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#recharges -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#recharges">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Infiltration"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Aquifer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#alpha_code -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#alpha_code">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#code"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">alphabetic code</rdfs:isDefinedBy>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#alpha_site_type_code -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#alpha_site_type_code">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#alpha_code"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#alpha_state_code -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#alpha_state_code">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#alpha_code"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">alphabetic state code</rdfs:isDefinedBy>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#code -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#code">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Agency"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">code</rdfs:isDefinedBy>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#description -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#description"/>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#hasTotalCities -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#hasTotalCities"/>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#hasTotalCounties -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#hasTotalCounties"/>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#hasTotalHydrologicalSites -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#hasTotalHydrologicalSites"/>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#hasTotalStates -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#hasTotalStates"/>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#hydrologic_unit_level -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#hydrologic_unit_level"/>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#name">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#numeric_code -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#numeric_code">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#code"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">numeric code</rdfs:isDefinedBy>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#numeric_county_code -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#numeric_county_code">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#numeric_code"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#numeric_state_code -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#numeric_state_code">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#numeric_code"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">numeric state code</rdfs:isDefinedBy>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#population -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#population">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UO_0000000 -->
+
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UO_0000000">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Unit_of_Measurement"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UO_0000190 -->
+
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UO_0000190">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UO_0000191"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UO_0000191 -->
+
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UO_0000191">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#dimensionless"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UO_0000196 -->
+
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UO_0000196">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#concentration"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#dimensionless"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Agency -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Agency"/>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Aggregate_Groundwater_Use -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Aggregate_Groundwater_Use">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Site"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Aggregate_Surface_Water_Use -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Aggregate_Surface_Water_Use">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Site"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Aggregate_Water_Use_Establishment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Aggregate_Water_Use_Establishment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Site"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Animal_Saste_Lagoon -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Animal_Saste_Lagoon">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Site"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Aquaculture -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Aquaculture">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Water_Use"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aquaculture water use is water associated with raising creatures that live in water—such as finfish and shellfish—for food, restoration, conservation, or sport.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Aquifer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Aquifer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Ground_Water_Body"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Atmosphere -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Atmosphere">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Geosphere"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Site"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The atmosphere of Earth is the layer of gases, commonly known as air, that surrounds the planet Earth and is retained by Earth&apos;s gravity.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Atomospheric_Condition -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Atomospheric_Condition">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the atmospheric conditions that comprise the state of the atmosphere in terms of temperature and wind and clouds and precipitation</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Body_Of_Water -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Body_Of_Water">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Surface"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Brook -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Brook">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Stream"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Canal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Canal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Stream"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Cave -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Cave">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Subsurface"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Cistern -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Cistern">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Facility"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#City -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#City">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Land_Mass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Clouds -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Clouds">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Atmosphere"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Cloudy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Cloudy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Weather"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Coastal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Coastal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Ocean"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Cold -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Cold">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Weather"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Combined_Sewer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Combined_Sewer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Facility"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Condensation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Condensation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Water_Cycle"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Condensation is the change of the physical state of matter from gas phase into liquid phase, and is the reverse of vapourisation.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Confined_Aquifer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Confined_Aquifer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Aquifer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Continent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Continent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Land_Mass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Country -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Country">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Land_Mass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#County -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#County">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#District"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Land_Mass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Creek -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Creek">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Stream"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Crust -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Crust">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Lithosphere"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Cryosphere -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Cryosphere">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Geosphere"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Dam -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Dam">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Fresh_Water_Body"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#District -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#District">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Land_Mass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Ditch -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Ditch">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Stream"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Diversion -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Diversion">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Facility"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Domestic -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Domestic">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Water_Use"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Domestic water use is water used for indoor and outdoor household purposes— all the things you do at home: drinking, preparing food, bathing, washing clothes and dishes, brushing your teeth, watering the yard and garden, and even washing the dog.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Drizzle -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Drizzle">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Percipitation"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Drizzle is a light liquid precipitation consisting of liquid water drops smaller than those of rain – generally smaller than 0.5 mm (0.02 in) in diameter.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Earth -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Earth">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the substance of the land surface</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Estuary -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Estuary">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Site"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Evaporation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Evaporation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Water_Cycle"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the process of turning from liquid into vapour.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Excavation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Excavation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Land"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Extensometer_well -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Extensometer_well">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Well"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Facility -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Facility">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Site"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Field -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Field">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Facility"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Fog -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Fog">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Percipitation"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fog is a visible aerosol consisting of minute water droplets or ice crystals suspended in the air at or near the Earth&apos;s surface.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Fresh_Water -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Fresh_Water">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Water"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fresh water (or freshwater) is any naturally occurring water except seawater and brackish water. Fresh water includes water in ice sheets, ice caps, glaciers, icebergs, bogs, ponds, lakes, rivers, streams, and even underground water called groundwater.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Fresh_Water_Body -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Fresh_Water_Body">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Body_Of_Water"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Geosphere -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Geosphere">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Earth"/>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Atmosphere"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Cryosphere"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Hydrosphere"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Lithosphere"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The geosphere may be taken as the collective name for the lithosphere, the hydrosphere, the cryosphere, and the atmosphere.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Glacier -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Glacier">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Body_Of_Water"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Site"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Golf_of_Course -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Golf_of_Course">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Facility"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Ground_Water_Body -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Ground_Water_Body">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Fresh_Water_Body"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Groundwater -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Groundwater">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Fresh_Water"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Surface_Water"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Groundwater is the water present beneath Earth&apos;s surface in soil pore spaces and in the fractures of rock formations.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Groundwater_Quality -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Groundwater_Quality">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Water_Quality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Groundwater_drain -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Groundwater_drain">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Subsurface"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Hail -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Hail">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Percipitation"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hail is a form of solid precipitation.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Humidity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Humidity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Atmosphere"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Hydroelectric_Plant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Hydroelectric_Plant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Facility"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Hydrologic_Unit -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Hydrologic_Unit"/>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Hydrologic_Unit_Code -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Hydrologic_Unit_Code"/>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Hydrosphere -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Hydrosphere">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Geosphere"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Hyporheic-zone_well -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Hyporheic-zone_well">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Well"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Icecap -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Icecap">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Body_Of_Water"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Industrial -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Industrial">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Water_Use"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Industrial water use includes water used for such purposes as fabricating, processing, washing, diluting, cooling, or transporting a product; incorporating water into a product; or for sanitation needs within the manufacturing facility</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Infiltration -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Infiltration">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Water_Cycle"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Infiltration is the process by which water on the ground surface enters the soil. Infiltration rate in soil science is a measure of the rate at which soil is able to absorb rainfall or irrigation. It is most often measured in millimetres per hour or inches per hour.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Interconnected_wells -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Interconnected_wells">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Well"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Irrigation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Irrigation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Water_Use"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Throughout the world, irrigation (water for agriculture, or growing crops) is probably the most important use of water (except for drinking and washing a smelly dog, perhaps). Estimates vary, but about 70 percent of all the world&apos;s freshwater withdrawals go towards irrigation uses (http://www.globalagriculture.org/report-topics/water.html).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Laboratory -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Laboratory">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Facility"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Lake -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Lake">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Reservoir"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Site"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Land -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Land">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Site"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Land_Mass -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Land_Mass">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Surface"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Landfill -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Landfill">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Facility"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Lithosphere -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Lithosphere">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Geosphere"/>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Crust"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Mantle"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Livestock -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Livestock">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Water_Use"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ivestock water use is water associated with livestock watering, feedlots, dairy operations, and other on-farm needs. Livestock includes dairy cows and heifers, beef cattle and calves, sheep and lambs, goats, hogs and pigs, horses, and poultry. Other livestock water uses include cooling of facilities for the animals and animal products such as milk, dairy sanitation and wash down of facilities, animal waste-disposal systems, and incidental water losses.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Mantle -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Mantle">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Lithosphere"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Measurment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Measurment"/>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Mining -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Mining">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Water_Use"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mining corporations need water to make bare rock give up its valuable minerals.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Mist -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Mist">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Percipitation"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mist is a phenomenon caused by small droplets of water suspended in air.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Moisture -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Moisture">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Atmosphere"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Natural_Process -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Natural_Process">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A process existing in or produced by nature (rather than by the intent of human beings).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Ocean -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Ocean">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Saline_Water_Body"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Site"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Outcrop -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Outcrop">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Land"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Outfall -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Outfall">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Facility"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Pavement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Pavement">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Facility"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Percipitation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Percipitation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Atmosphere"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Water_Cycle"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Precipitation is water released from clouds in the form of rain, freezing rain, sleet, snow, or hail.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Pond -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Pond">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Reservoir"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Pressure -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Pressure">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Atmosphere"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Province -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Province">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Land_Mass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Public_supply -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Public_supply">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Water_Use"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Public supply refers to water withdrawn by public and private water suppliers that provide water to at least 25 people or have a minimum of 15 connections. Public-supply water is delivered to users for domestic, commercial, and industrial purposes, and also is used for public services and system losses.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Rain -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Rain">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Percipitation"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rain is liquid water in the form of droplets that have condensed from atmospheric water vapor and then become heavy enough to fall under gravity.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Rainy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Rainy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Weather"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Region -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Region">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Hydrologic_Unit"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Land_Mass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Reservoir -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Reservoir">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Surface_Water_Body"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#River -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#River">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Stream"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Runoff -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Runoff">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Water_Cycle"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Runoff, in hydrology, quantity of water discharged in surface streams. Runoff includes not only the waters that travel over the land surface and through channels to reach a stream but also interflow, the water that infiltrates the soil surface and travels by means of gravity toward a stream channel (always above the main groundwater level) and eventually empties into the channel. Runoff also includes groundwater that is discharged into a stream; streamflow that is composed entirely of groundwater is termed base flow, or fair-weather runoff, and it occurs where a stream channel intersects the water table.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Sale_Lake -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Sale_Lake">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Saline_Water_Body"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Saline_Water -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Saline_Water">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Water"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Saline water (more commonly known as salt water) is water that contains a high concentration of dissolved salts (mainly NaCl).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Saline_Water_Body -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Saline_Water_Body">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Body_Of_Water"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Sea -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Sea">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Saline_Water_Body"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Septic_system -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Septic_system">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Facility"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Shore -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Shore">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Land"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Sinkhole -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Sinkhole">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Ground_Water_Body"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Land"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Site -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Site">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Surface"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Sleet -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Sleet">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Percipitation"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sleet is a regionally variant term for two distinct forms of precipitation: Rain and snow mixed.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Snow -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Snow">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Percipitation"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Snow refers to forms of ice crystals that precipitate from the atmosphere (usually from clouds) and undergo changes on the Earth&apos;s surface.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Soil_hole -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Soil_hole">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Land"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Spring -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Spring">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Site"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#State -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#State">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Land_Mass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Storm_sewer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Storm_sewer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Facility"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Stream -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Stream">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Site"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Surface_Water_Body"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Streamflow -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Streamflow">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Runoff"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Streamflow, or channel runoff, is the flow of water in streams, rivers, and other channels, and is a major element of the water cycle.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Subsurface -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Subsurface">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Site"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Sunny -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Sunny">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Weather"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Surface -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Surface">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Crust"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Surface_Runoff -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Surface_Runoff">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Runoff"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Surface runoff (also known as overland flow) is the flow of water that occurs when excess stormwater, meltwater, or other sources flows over the Earth&apos;s surface.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Surface_Water -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Surface_Water">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Fresh_Water"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Surface water is water on the surface of the planet such as in a river, lake, wetland, or ocean. It can be contrasted with groundwater and atmospheric water.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Surface_Water_Body -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Surface_Water_Body">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Fresh_Water_Body"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Surface_Water_Quality -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Surface_Water_Quality">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Water_Quality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Swamp -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Swamp">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Reservoir"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Temperature -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Temperature">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Atmosphere"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Territory -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Territory">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Land_Mass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Test_Hole -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Test_Hole">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Well"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Thermoelectric_Plant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Thermoelectric_Plant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Facility"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Thermoelectric_power -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Thermoelectric_power">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Water_Use"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Water for thermoelectric power is used in generating electricity with steam-driven turbine generators.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Tidal_stream -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Tidal_stream">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Stream"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Transpiration -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Transpiration">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Water_Cycle"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Transpiration is the process by which moisture is carried through plants from roots to small pores on the underside of leaves, where it changes to vapor and is released to the atmosphere.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Tributory -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Tributory">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Stream"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Tunnel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Tunnel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Subsurface"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Unconfined_Aquifer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Unconfined_Aquifer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Aquifer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Unit_of_Measurement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Unit_of_Measurement"/>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Unsaturated_zone -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Unsaturated_zone">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Subsurface"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Waste_Injection_Well -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Waste_Injection_Well">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Site"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Wastewater_Land_Application -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Wastewater_Land_Application">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Site"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Wastewater_Sewer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Wastewater_Sewer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Facility"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Wastewater_Treatment_Plant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Wastewater_Treatment_Plant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Facility"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Water -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Water">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Water is a transparent, tasteless, odorless, and nearly colorless chemical substance, which is the main constituent of Earth&apos;s streams, lakes, and oceans, and the fluids of most living organisms.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Water_Cycle -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Water_Cycle">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Natural_Process"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Water cycle, also called hydrologic cycle, cycle that involves the continuous circulation of water in the Earth-atmosphere system. Of the many processes involved in the water cycle, the most important are evaporation, transpiration, condensation, precipitation, and runoff.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Water_Distribution_System -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Water_Distribution_System">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Facility"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Water_Quality -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Water_Quality">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Water quality can be thought of as a measure of the suitability of water for a particular use based on selected physical, chemical, and biological characteristics</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Water_Quality_Property -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Water_Quality_Property">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Physical, chemical and bilogical properites of water</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Water_Supply_Treatment_Plant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Water_Supply_Treatment_Plant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Facility"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Water_Use -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Water_Use">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The water in the Nation&apos;s rivers, lakes, reservoirs, and underground aquifers are vitally important to our everyday life. These water bodies supply the water to serve the needs of every human and for the world&apos;s ecological systems, too.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Water_Use_Establishment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Water_Use_Establishment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Facility"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Watershed -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Watershed">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Land_Mass"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A watershed – the land area that drains to one stream, lake or river – affects the water quality in the water body that it surrounds. Like water bodies (e.g., lakes, rivers, and streams), individual watersheds share similarities but also differ in many ways. Every inch of the United States is part of a watershed – in other words, all land drains into a lake, river, stream or other water body and directly affects its quality.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Weather -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Weather">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Atomospheric_Condition"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a physical phenomenon associated with the atmosphere</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Well -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Well">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Ground_Water_Body"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Site"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Wetland -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Wetland">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Site"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Wind -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Wind">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Atmosphere"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Windy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Windy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Weather"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#acceleration -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#acceleration">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Measurment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#area -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#area">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Measurment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#area_density -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#area_density">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#density"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#catalytic_concentration -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#catalytic_concentration">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#concentration"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#concentration -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#concentration">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Measurment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#count -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#count">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#dimensionless"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#density -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#density">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Measurment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#dimensionless -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#dimensionless">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Measurment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#electric_current -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#electric_current">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Measurment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#electrical_conduction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#electrical_conduction">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Measurment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#energy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#energy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Measurment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#force -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#force">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Measurment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#length -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#length">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Measurment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#linear_density -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#linear_density">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#density"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#mass -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#mass">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Measurment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#mass_density -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#mass_density">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#density"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#molality -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#molality">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#concentration"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#molarity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#molarity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#concentration"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#normality -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#normality">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#concentration"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#power -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#power">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Measurment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#pressure -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#pressure">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Measurment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#substance -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#substance">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Measurment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#temperature -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#temperature">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Measurment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#time -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#time">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Measurment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#viscosity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#viscosity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Measurment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#volume -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#volume">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Measurment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#volumetric_flow_rate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#volumetric_flow_rate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Measurment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#speed/velocity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#speed/velocity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Measurment"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#AK001 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#AK001">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Agency"/>
+        <code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AK001</code>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Alaska Department of Transportation and Public Facilities</name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#AK002 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#AK002">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Agency"/>
+        <code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AK002</code>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Alaska Department of Environmental Conservation</name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#AK004 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#AK004">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Agency"/>
+        <code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AK004</code>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Alabama -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Alabama">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#State"/>
+        <alpha_state_code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AL</alpha_state_code>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Alabama</name>
+        <numeric_state_code rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">01</numeric_state_code>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Alaska -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Alaska">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#State"/>
+        <alpha_state_code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AK</alpha_state_code>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Alaska</name>
+        <numeric_state_code rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">02</numeric_state_code>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#America -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#America">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Country"/>
+        <code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">US</code>
+        <hasTotalCities rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">311</hasTotalCities>
+        <hasTotalCounties rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3283</hasTotalCounties>
+        <hasTotalHydrologicalSites rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1653702</hasTotalHydrologicalSites>
+        <hasTotalStates rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">51</hasTotalStates>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">United States of America</name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Autauga -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Autauga">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#County"/>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Autauga County</name>
+        <numeric_county_code rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">001</numeric_county_code>
+        <numeric_state_code rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">01</numeric_state_code>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Baldwin -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Baldwin">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#County"/>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Baldwin</name>
+        <numeric_county_code rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">003</numeric_county_code>
+        <numeric_state_code rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">01</numeric_state_code>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Karachi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Karachi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#City"/>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Karachi</name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#New_York -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#New_York">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#City"/>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">New York City</name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Pakistan -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Pakistan">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#Country"/>
+        <code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PK</code>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Islamic Repulic of Pakistan</name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#San_Francisco -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#San_Francisco">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#City"/>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">San Francisco</name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UO_0000196"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#catalytic_concentration"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#molality"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#molarity"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#normality"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#area_density"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#linear_density"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2018/9/untitled-ontology-18#mass_density"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

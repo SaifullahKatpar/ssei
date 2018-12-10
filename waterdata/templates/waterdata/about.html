@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+
+ {% extends 'waterdata/base.html' %}
+
+<!-- <!DOCTYPE html>
 <html>
 {% load static %}
 <head>
@@ -10,8 +13,26 @@
 		}
 	</style>
 </head>
-<body class="bg-light">
-<div class="container">
+ -->
+
+{% block title %}
+<title>
+		Semantic Search Engine for Irrigation
+</title>
+{% endblock %}
+
+
+{% block content %}
+<style type="text/css">
+	section#tools img{
+		width:150px;
+	}
+</style>
+
+
+ <body class="bg-light">
+
+	<div class="container">
 
 			<section class="container">
 				<blockquote class="blockquote">
@@ -113,11 +134,12 @@
 
 </div>
 
+{% endblock %}
 
-</body>
+<!-- </body>
 
 	<script src="{% static 'jquery-3.3.1.min.js' %}"></script>
 	<script src="{% static 'popper.min' %}"></script>
 	<script src="{% static 'js/bootstrap.bundle.min' %}"></script>
 
-</html>
+</html> -->
