@@ -24,9 +24,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', waterdata.views.home,name="home"),
     path('about/', waterdata.views.about,name="about"),
-    path('test/', waterdata.views.test,name="test"),
+#    path('test/', waterdata.views.test,name="test"),
     path('ontologies/', waterdata.views.ontologies,name="ontologies"),
     path('ontologies/<int:ontology_id>', waterdata.views.ontology_detail,name="detail"),
+    path('ontologies/<int:ontology_id>/raw', waterdata.views.raw,name="raw"),
 
 ]
 
