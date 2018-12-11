@@ -1,0 +1,27 @@
+{% extends 'waterdata/base.html' %}
+
+{% block title %}
+<title>
+		query: {{query}}
+</title>
+{% endblock %}
+
+
+{% block content %}
+<div class="container" style="margin-left: 90px;margin-top:10px;">
+
+    <form 	autocomplete="off" action="/search/" method="get">
+            <div class="autocomplete" style="width:800px;">
+            {{ form }}
+            </div>
+    <input type="submit" value="Search">
+
+    </form>	
+    
+</div>            
+    
+
+
+{% endblock %}
+
+

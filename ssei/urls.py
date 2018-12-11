@@ -18,13 +18,15 @@ from django.urls import path
 import waterdata.views
 from django.conf import settings
 from django.conf.urls.static import static
-
+from waterdata.views import ResultView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('search/', ResultView.as_view()),
+    
     path('', waterdata.views.home,name="home"),
     path('about/', waterdata.views.about,name="about"),
-    path('water/', waterdata.views.water,name="water"),
+    path('water/', waterdata.views.water,name="water"),    
 #    path('test/', waterdata.views.test,name="test"),
     path('ontologies/', waterdata.views.ontologies,name="ontologies"),
     path('ontologies/<int:ontology_id>', waterdata.views.ontology_detail,name="detail"),

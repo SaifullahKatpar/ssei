@@ -10,7 +10,7 @@
 
 	<div class="container-fluid">
 		<h1> {{ ontology.name|capfirst }}</h1>
-		<a href="{{ontology.uri}}"> {{ ontology.uri }}</a>
+		URI: <a href="{{ontology.uri}}"> {{ ontology.uri }}</a>
 		<br>
 		{% if ontology.authors %}
 			Authors: 	
@@ -18,5 +18,10 @@
 				 {{ author|capfirst }},
 			{% endfor %}
 		{% endif %}
+		<br>
+			Description:
+			<p>
+					{{ ontology.description }}
+			</p>
 	</div>
 {% endblock %}
