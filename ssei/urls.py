@@ -28,7 +28,6 @@ urlpatterns = [
 #    path('test/', waterdata.views.test,name="test"),
     path('ontologies/', waterdata.views.ontologies,name="ontologies"),
     path('ontologies/<int:ontology_id>', waterdata.views.ontology_detail,name="detail"),
-    path('ontologies/<int:ontology_id>/raw', waterdata.views.raw,name="raw"),
 
 ]
 

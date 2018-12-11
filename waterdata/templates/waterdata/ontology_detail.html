@@ -14,11 +14,9 @@
 		<br>
 		{% if ontology.authors %}
 			Authors: 	
-			<p>
 			{% for author in  ontology.authors.all %}
-				 {{ author|capfirst }}<br>			 
+				 {{ author|capfirst }},
 			{% endfor %}
-			</p>
 		{% endif %}
 	</div>
 {% endblock %}
