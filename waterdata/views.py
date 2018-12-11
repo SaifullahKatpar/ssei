@@ -26,6 +26,9 @@ def raw(request,ontology_id):
     ontology = get_object_or_404(Ontology,pk=ontology_id)
     return HttpResponse(ontology.file)
 
+def water(request):
+    return render(request,'waterdata/water.html')
+
 
 ''' def test(request):
     obj = OWLReady()
