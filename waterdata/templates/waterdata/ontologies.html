@@ -12,7 +12,7 @@
 
 
 <div class="container-fluid">
-		{% for ontology in ontologies.all %}
+		{% for ontology in object_list.all %}
 			<a href="{% url 'detail' ontology.id %}"><h3> {{ ontology.pk }}. {{ ontology.name|capfirst }}</h3></a>
 		{% endfor %}
 	</div>
