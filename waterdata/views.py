@@ -4,8 +4,8 @@ from .forms import QueryForm
 from .models import Ontology
 from django.views import View
 from django.views.generic import ListView, DetailView
-
-
+import owlready2
+    
 class ResultView(View):
     template_name = 'waterdata/result.html'
     form = QueryForm()
@@ -22,8 +22,10 @@ class OntologyList(ListView):
     queryset = Ontology.objects.all()
  """
 
+
 def home(request):
     form = QueryForm()
+
     return render(request,'waterdata/home.html',{'form':form})
 def about(request):
     return render(request,'waterdata/about.html')
