@@ -14,7 +14,7 @@
 </head>
 <body class="bg-light">
 <div class="main">
-  
+
 <div class="container">
 	{% block content %}
     {% endblock %}		
@@ -26,7 +26,8 @@
 
 </body>
 <script type="text/javascript">
-	var countries = ["Agency","Aggregate Groundwater Use","Aggregate Surface Water Use","Aggregate Water Use Establishment","Animal Saste Lagoon","Aquaculture","Aquifer","Atmosphere","Atomospheric Condition","Body Of Water","Brook","Canal","Cave","Cistern","City","Clouds","Cloudy","Coastal","Cold","Combined Sewer","Condensation","Confined Aquifer","Continent","Country","County","Creek","Crust","Cryosphere","Dam","District","Ditch","Diversion","Domestic","Drizzle","Earth","Estuary","Evaporation","Excavation","Extensometer well","Facility","Field","Fog","Fresh Water","Fresh Water Body","Geosphere","Glacier","Golf of Course","Ground Water Body","Groundwater","Groundwater Quality","Groundwater drain","Hail","Humidity","Hydroelectric Plant","Hydrologic Unit","Hydrologic Unit Code","Hydrosphere","Hyporheic-zone well","Icecap","Industrial","Infiltration","Interconnected wells","Irrigation","Laboratory","Lake","Land","Land Mass","Landfill","Lithosphere","Livestock","Mantle","Measurment","Mining","Mist","Moisture","Natural Process","Ocean","Outcrop","Outfall","Pavement","Percipitation","Pond","Pressure","Province","Public supply","Rain","Rainy","Region","Reservoir","River","Runoff","Sale Lake","Saline Water","Saline Water Body","Sea","Septic system","Shore","Sinkhole","Site","Sleet","Snow","Soil hole","Spring","State","Storm sewer","Stream","Streamflow","Subsurface","Sunny","Surface","Surface Runoff","Surface Water","Surface Water Body","Surface Water Quality","Swamp","Temperature","Territory","Test Hole","Thermoelectric Plant","Thermoelectric power","Tidal stream","Transpiration","Tributory","Tunnel","Unconfined Aquifer","Unit of Measurement","Unsaturated zone","Waste Injection Well","Wastewater Land Application","Wastewater Sewer","Wastewater Treatment Plant","Water","Water Cycle","Water Distribution System","Water Quality","Water Quality Property","Water Supply Treatment Plant","Water Use","Water Use Establishment","Watershed","Weather","Well","Wetland","Wind","Windy","acceleration","area","area density","catalytic concentration","concentration","count","density","dimensionless","electric current","electrical conduction","energy","force","length","linear density","mass","mass density","molality","molarity","normality","power","pressure","substance","temperature","time","viscosity","volume","volumetric flow rate","speed/velocity"]
+	var countries = {{water_classes|safe}};
+
 </script>
 
 <script src="{% static 'jquery-3.3.1.min.js' %}"></script>
