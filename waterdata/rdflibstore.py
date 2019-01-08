@@ -1,0 +1,1 @@
+# code for stroing triples in RDF Store (PostgreSql)

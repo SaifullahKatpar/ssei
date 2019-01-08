@@ -32,6 +32,28 @@
 	</form>	
 	
 </div>
+<br>
+<center>
+	<p>
+		<a class="btn btn-dark" data-toggle="collapse" href="#filter" role="button" aria-expanded="false" aria-controls="collapseExample">
+		 Apply Filters
+		</a>
+	  </p>
+	
+	  <div class="collapse" id="filter">
+			<div class="form-check form-check-inline">
+				{% for filter in filters %}
+					<input type="checkbox" class="form-check-input" id="filter-input">
+					<label class="form-check-label" for="filter-input">  {{ filter|capfirst }} </label>
+				{% endfor %}
+			</div>	  
+	</div>
+	
+
+</center>
+
+
+<!--
 <br><br><br>
 <center>
 		<div class="p">
@@ -41,6 +63,8 @@
 				Visit <a href="{% url 'ontologies' %}"> other ontologies</a>
 		</div>		
 </center>
+
+-->
 
 
 {% endblock %}
