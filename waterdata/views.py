@@ -11,6 +11,7 @@ class ResultView(View):
     form = QueryForm()
     def get(self, request):
         onto = get_ontology("uploads/ontologies/water.owl").load()
+        #onto = get_ontology("https://raw.githubusercontent.com/SaifullahKatpar/WaterOnto/master/water.owl").load()
         q = request.GET['source']
         ins = onto.search(iri = '*'+q)
         res = [ str(i).split('.')[1] for i in ins[0].instances()]
