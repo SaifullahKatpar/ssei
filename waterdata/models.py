@@ -17,5 +17,3 @@ class Author(models.Model):
 	introduction = models.TextField(max_length=1000)
 	def __str__(self):
 		return self.name
-
-
