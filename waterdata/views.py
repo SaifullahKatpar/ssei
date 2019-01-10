@@ -7,7 +7,7 @@ from django.views.generic import ListView, DetailView
 
 from .api_manager import APIManager
 from .formatters import DataframeFormatter
-
+from .query_processor import preprocess
 
 # TODO: format results page for different ouputs
 class ResultView(View):
@@ -15,14 +15,14 @@ class ResultView(View):
     form = QueryForm()
     
     def get(self, request):
-        #q = request.GET['source']
-        url = request.GET['source']
+        q = request.GET['source']
+        #url = request.GET['source']
         #url = "https://waterservices.usgs.gov/nwis/site/?format=rdb&stateCd=NY"
-        content = APIManager().get_content_from_url(url)
-        df = DataframeFormatter().text_to_df(content)
-        html = DataframeFormatter().df_to_html(df)
-        return HttpResponse(html)
-
+        #content = APIManager().get_content_from_url(url)
+        #df = DataframeFormatter().text_to_df(content)
+        #html = DataframeFormatter().df_to_html(df)
+        #return HttpResponse(html)
+        return HttpResponse(preprocess(q))
         #return render(request, self.template_name,{'form':self.form,'query':q})
 ''' def suggest(request):
     word = request.GET.get('source', None)
