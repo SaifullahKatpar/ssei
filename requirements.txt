@@ -11,6 +11,7 @@ isodate==0.6.0
 jsonpickle==1.0
 Mako==1.0.7
 MarkupSafe==1.1.0
+nltk==3.4
 numpy==1.15.4
 Owlready2==0.12
 pandas==0.23.4
@@ -23,6 +24,7 @@ pytz==2018.7
 rdflib==4.2.2
 rdflib-sqlalchemy==0.3.8
 requests==2.21.0
+singledispatch==3.4.0.3
 six==1.12.0
 SQLAlchemy==1.2.15
 urllib3==1.24.1
