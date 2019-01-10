@@ -1,22 +1,33 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
+
 from .forms import QueryForm
 from .models import Ontology
+
 from django.views import View
 from django.views.generic import ListView, DetailView
-from owlready2 import *
+#from owlready2 import *
+#from .owl_search import OWLSearch
+#from .owl_store import RDFGraph
 
+
+
+# TODO: format results page for different ouputs
 class ResultView(View):
     template_name = 'waterdata/result.html'
     form = QueryForm()
     def get(self, request):
-        onto = get_ontology("uploads/ontologies/water.owl").load()
-        #onto = get_ontology("https://raw.githubusercontent.com/SaifullahKatpar/WaterOnto/master/water.owl").load()
         q = request.GET['source']
-        ins = onto.search(iri = '*'+q)
-        res = [ str(i).split('.')[1] for i in ins[0].instances()]
+        return render(request, self.template_name,{'form':self.form,'query':q})
 
-        return render(request, self.template_name,{'form':self.form,'query':q,'results':res})
+
+
+
+''' def suggest(request):
+    word = request.GET.get('source', None)
+    ins = onto.search(iri = '*'+word)
+ '''    
+
 
 class OntologyList(ListView):
     template_name = 'waterdata/ontologies.html'
