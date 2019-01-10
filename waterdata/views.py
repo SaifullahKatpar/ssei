@@ -52,3 +52,6 @@ def water(request):
 
 def test(request):
     return render(request,'waterdata/test.html')
+
+def spell(request):
+    return render(request,'waterdata/spell.html')
