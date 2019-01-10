@@ -61,11 +61,13 @@ class OWLSearch():
         individuals = [ str(ins).split('.')[1] for ins in matched_classes[0].instances()]        
         return individuals
 
-# class: RDFGraph, methods:
+# class: RDFGraph, methods: openGraph, createGraph, add_triple,
+# query_graph, get_triples, predicates_of, objects_of, subjects_of,
+# predicate_objects_of, subject_objects_of, subject_predicates_of
 
 
 
-# class dec
+# class declaration
 class RDFLibGraph():
     # class attributes
     # configuration variables for Postgres
