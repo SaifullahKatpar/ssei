@@ -29,9 +29,7 @@ urlpatterns = [
     path('water/', waterdata.views.water,name="water"),    
     path('ontologies/', OntologyList.as_view(),name="ontologies"),
     path('ontologies/<int:ontology_id>', waterdata.views.ontology_detail,name="detail"),
-
     path('test/', waterdata.views.test,name="test"),
-    path('spell/', waterdata.views.spell,name="spell"),
 
 
 ]
