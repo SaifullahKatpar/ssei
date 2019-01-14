@@ -22,7 +22,7 @@ class ResultView(View):
         #df = DataframeFormatter().text_to_df(content)
         #html = DataframeFormatter().df_to_html(df)
         #return HttpResponse(html)
-        res  = QueryManager().preprocess(q)
+        res  = QueryManager().get_synonyms(q)
         return HttpResponse(res)
         #return render(request, self.template_name,{'form':self.form,'query':q})
 ''' def suggest(request):

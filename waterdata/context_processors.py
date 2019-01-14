@@ -1,4 +1,5 @@
 from owlready2 import *
+# TODO: get this variable from OWL manager class
 
 def water_classes(request):
     # get ontology and load classes for search autocomplete
