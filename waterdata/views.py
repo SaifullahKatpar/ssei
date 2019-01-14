@@ -5,9 +5,9 @@ from .models import Ontology
 from django.views import View
 from django.views.generic import ListView, DetailView
 
-from .api_manager import APIManager
-from .formatters import DataframeFormatter
-from .query_processor import preprocess
+#from .api_manager import APIManager
+#from .formatters import DataframeFormatter
+from .query_processor import QueryManager
 
 # TODO: format results page for different ouputs
 class ResultView(View):
@@ -22,7 +22,8 @@ class ResultView(View):
         #df = DataframeFormatter().text_to_df(content)
         #html = DataframeFormatter().df_to_html(df)
         #return HttpResponse(html)
-        return HttpResponse(preprocess(q))
+        res  = QueryManager().preprocess(q)
+        return HttpResponse(res)
         #return render(request, self.template_name,{'form':self.form,'query':q})
 ''' def suggest(request):
     word = request.GET.get('source', None)
