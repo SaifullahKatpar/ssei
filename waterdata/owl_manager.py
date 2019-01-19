@@ -18,6 +18,7 @@ from rdflib_sqlalchemy import registerplugins
 from rdflib.plugin import register
 from rdflib.plugin import Parser
 from rdflib.plugin import Serializer
+from rdflib.namespace import *
 
 
 
@@ -34,7 +35,9 @@ class OWLManager:
     # constructor initilizes instances of OWLSearch and RDFLibGraph
     def __init__(self):
         self.searcher = OWLSearch()
-        self.rdflib_graph = RDFLibGraph() 
+        self.rdflib_graph = RDFLibGraph()
+        self.onto = self.searcher.onto
+        self.graph = self.rdflib_graph.graph
 
 
 
@@ -48,6 +51,7 @@ class OWLManager:
 # main class for searching through ontology of water
 class OWLSearch():
 
+
     # constructor, arguments: path of the owl file
     def __init__(self,path="uploads/ontologies/water.owl"):
         self.onto = get_ontology(path).load()
@@ -58,8 +62,8 @@ class OWLSearch():
         # ins is the list of all classes that match the query
         matched_classes = self.onto.search(iri = '*'+q)
         # res is the list of instances of the first of all matched classes 
-        individuals = [ str(ins).split('.')[1] for ins in matched_classes[0].instances()]        
-        return individuals
+        #individuals = [ str(ins).split('.')[1] for ins in matched_classes[0].instances()]        
+        return str(matched_classes[0])
 
 # class: RDFGraph, methods: openGraph, createGraph, add_triple,
 # query_graph, get_triples, predicates_of, objects_of, subjects_of,
@@ -84,7 +88,8 @@ class RDFLibGraph():
         register('xml', Parser, 'rdflib.plugins.parsers.rdfxml', 'RDFXMLParser')
         registerplugins()
         # get SQLAlchemy plugin to create a triple store 
-        self.store = plugin.get("SQLAlchemy", Store)(identifier=self.store_name)        
+        self.store = plugin.get("SQLAlchemy", Store)(identifier=self.store_name)
+        self.openGraph()
 
     # get the graph specifying graph_id
     # open given graph in store
@@ -104,12 +109,100 @@ class RDFLibGraph():
         #TODO: add code to add a triple the graph
         self.graph.add((s,p,o))
 
+    # pass a SPARQL query to the graph
     def query_graph(self,q):
-        result = self.graph.query("select * where {?s ?p ?o} limit 5")
+        result = self.graph.query(q)
         return result
+    
+    def regex_search(self,pattern):
+        matched_in_subjects = self.lookup_subjects(pattern)
+        matched_in_objects = self.lookup_objects(pattern )
+        matched_in_predicates = self.lookup_predicates(pattern)
+        matched_in_triples = ''
+        for match in matched_in_subjects:
+            matched_in_triples+= str(match)
+        for match in matched_in_objects:
+            matched_in_triples+= str(match)
+        for match in matched_in_predicates:
+            matched_in_triples+= str(match)
+
+        return matched_in_triples
+
+    # look the term in subjects, and return matching triples
+    def lookup_subjects(self,pattern):
+        q = """
+        SELECT * WHERE {  
+            ?s ?p ?o .   
+            FILTER (regex(?s, "pattern","i")) }
+        """
+        q= q.replace("pattern",pattern)
+        return self.query_graph(q)
+
+
+    # look the term in subjects, and return matching triples
+    def lookup_objects(self,pattern):
+        q = """
+        SELECT * WHERE {  
+            ?s ?p ?o .   
+            FILTER (regex(?o, "pattern","i")) }
+        """
+        q= q.replace("pattern",pattern)
+        return self.query_graph(q)
+
+
+    # look the term in subjects, and return matching triples
+    def lookup_predicates(self,pattern):
+        q = """
+        SELECT * WHERE {  
+            ?s ?p ?o .   
+            FILTER (regex(?p, "pattern","i")) }
+        """
+        q= q.replace("pattern",pattern)
+        return self.query_graph(q)
+
+
+
+
+
+
+    def get_length(self):
+        length = len(self.graph)
+        return 'Length: '+str(length)
 
     def get_triples(self):
-        return self.graph.triples()
+        triples = []
+        for s,p,o in self.graph:
+            triples.append((s,p,o))
+        return triples
+
+    def list_raw_statements(self):
+        statements = []
+        for row in self.graph:
+            statements.append(str(row))
+        return statements
+
+    def list_statements(self):
+        statements = []
+        for s,p,o in self.graph:
+            
+            s_term = self._get_term(s)
+            p_term = self._get_term(p)
+            o_term = self._get_term(o)
+            
+            if s_term and p_term and o_term:
+                statements.append(s_term+' '+p_term+' '+ o_term )           
+        return statements
+
+    def _get_term(self,uri):
+        term = None
+        if '#' in uri:
+            terms = str(uri).split('#')
+            if len(terms)>1:
+                term = terms[1]
+        return term
+
+
+
 
     def predicates_of(self,s,o):
         return self.graph.predicates(s,o) 

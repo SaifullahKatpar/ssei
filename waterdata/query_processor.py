@@ -11,8 +11,8 @@ from nltk.tokenize import word_tokenize
 from nltk.tag import pos_tag
 from nltk.corpus import wordnet
 from autocorrect import spell
-
-class QueryManager:
+from .owl_manager import RDFLibGraph
+class QueryParser:
 
     def __init__(self):
         # Punkt Tokenizer Models from NLTK
@@ -26,6 +26,7 @@ class QueryManager:
             nltk.download('wordnet')
             nltk.download('punkt')
             nltk.download('averaged_perceptron_tagger')
+
 
     
     
@@ -71,27 +72,36 @@ class QueryManager:
     #   - tokenize
     #   - part-of-speech tagging POS 
     #   - spell correction
-    # returns a list of tuples cotaning word and POS tag
-    def preprocess(self, sent):       
-        words = sent.split()
+    # returns a list of tuples cotaning term and POS tag
+    def preprocess(self, query):   
+        correct_query = self.get_correct_query(query)    
+        # tokens of the string
+        tokenized_query = word_tokenize(correct_query)
+        # (token, POS-tag) tuples
+        pos_tagged_query = pos_tag(tokenized_query)
+        return pos_tagged_query
+
+    def get_correct_query(self,query):
+        words = query.split()
         correct_words = []
         for word in words:
             # if word is alphabetical, get its correct spelling
             if word.isalpha():
-                correct_words.append(spell(word))
+                correct_word = spell(word)
+                print(correct_word,word)
+                if correct_word!= word:
+                    correct_word = "<button type=\"button\" class=\"btn btn-danger\">"+correct_word +"</button>"
+                correct_words.append(correct_word)
             # otherwise, append the word to correct words list
             else:
                 correct_words.append(word)
         # convert list to string separated by spaces
-        correct_sent = ' '.join(correct_words)
-        # tokens of the string
-        tokenized_sent = word_tokenize(correct_sent)
-        # (token, POS-tag) tuples
-        pos_tagged_sent = pos_tag(tokenized_sent)
-        return pos_tagged_sent
+        correct_query = ' '.join(correct_words)
+        return correct_query
 
-    # get words similar in meaning to the query word
-    # optional pos is the part of speech of the word
+
+    # get terms similar in meaning to the query term
+    # optional pos is the part of speech of the term
     def get_synonyms(self,word, pos=None):
         wordnet_pos = {
             "NOUN": wordnet.NOUN,
@@ -111,4 +121,9 @@ class QueryManager:
         synonyms = [synonym for synonym in synonyms if synonym != word]
         return synonyms
 
-#    def match_classes(self, word):
+    # find URIRefs from the ontology that match the terms
+    def find_uriref(self, term):
+        rdf = RDFLibGraph()
+        res = rdf.regex_search(term)
+        return res
+

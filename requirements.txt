@@ -1,9 +1,8 @@
 alembic==1.0.5
-autocorrect==0.3.0
 certifi==2018.11.29
 chardet==3.0.4
 dj-database-url==0.5.0
-Django>=2.1.5
+Django==2.1.4
 django-heroku==0.3.1
 django-pandas==0.5.2
 gunicorn==19.9.0
@@ -25,6 +24,7 @@ pytz==2018.7
 rdflib==4.2.2
 rdflib-sqlalchemy==0.3.8
 requests==2.21.0
+rope==0.11.0
 singledispatch==3.4.0.3
 six==1.12.0
 SQLAlchemy==1.2.15

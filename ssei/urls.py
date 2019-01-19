@@ -27,10 +27,13 @@ urlpatterns = [
         path('', waterdata.views.home,name="home"),
     path('about/', waterdata.views.about,name="about"),
     path('water/', waterdata.views.water,name="water"),    
+    path('resource/<resource_id>', waterdata.views.get_resource,name="resource"),    
     path('ontologies/', OntologyList.as_view(),name="ontologies"),
     path('ontologies/<int:ontology_id>', waterdata.views.ontology_detail,name="detail"),
     path('test/', waterdata.views.test,name="test"),
 
+#TODO: add a url for sparql endpoint
+#TODO: add a url redirected to htm version of the sparql query result
 
 ]
 

@@ -10,7 +10,7 @@ import requests
 
 
 # this class defines methods for creating urls from key words,
-# mapping owl classes to APIs, etc. 
+# mapping owl classes to USGS APIs, etc. 
 class APIManager:
 
     #parameters for the urls
