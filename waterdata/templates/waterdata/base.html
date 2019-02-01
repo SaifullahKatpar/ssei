@@ -22,15 +22,36 @@
 		margin-left: 0px;
 		z-index: 10;
 		}
-		
-		div.search-box{
-			margin-top: 20px;
+		div.border-search-box{
+			margin-top: 0px;
 			border-bottom: .5px solid black;
+			transition: margin-top 1s;
+			-webkit-transition: margin-top 0.5s;
 		}
+
 		div.suggest{
 			position: relative;
 		}
 
+		.btn {
+		border: none;
+		outline: none;
+		padding: 10px 16px;
+		background-color: #f1f1f1;
+		cursor: pointer;
+		}
+
+		/* Style the active class (and buttons on mouse-over) */
+		.active, .btn:hover {
+		background-color: #666;
+		color: white;
+		}
+
+		.search-box{
+			position: fixed;
+			margin-top: 100px;
+			margin-left: 350px;
+		}
 	</style>
 	<!--STYLESHEET END-->
 
@@ -54,9 +75,8 @@
 		
 
 						<!--START SEARCH BOX DIV-->
-						
-						<div class="search-box row">	
-							<div class="col-3 h2"> 
+						<div class="search-box">	
+							<div class="col-3 h2 icon" style="display:none;"> 
 								<img src="https://static.thenounproject.com/png/21266-200.png" height="50px" width="50px">
 								SSEI</div>
 							
@@ -78,17 +98,9 @@
 						</div>
 						<!--END SEARCH BOX DIV-->
 		
-					<center>
-					<!-- DIV FOR SUGGEST START-->
-					<div class="suggest" style="display: none;">
-							<strong>Did you mean:</strong>   {{result|safe}}
-					</div>
-					<!-- DIV FOR SUGGEST END-->
-
-					</center>
 					<!-- START PLACEHOLDER FOR CODE AFTER SEARCH BOX-->
 					<div class="container after-search">
-
+						
 							{% block content-after %}
 							{% endblock %}		
 					</div>
@@ -119,7 +131,16 @@
 	// change bg color on focus event
 	function changeBgColor(clr){
 		$("body").attr("class",clr);
-	}
+		if(document.title=="Results"){
+				if($(".search-box").css("margin-top")!="0px" && !$("body").hasClass("bg-dark")){
+					$(".search-box").css("margin-top", "0px");
+				}else{
+					$(".search-box").css("margin-top", "10px");
+
+				}				
+	        }
+		}
+
 
 	$(document).ready(function(){
 		$("input").attr("onfocus","changeBgColor(\"bg-dark\")");	
@@ -140,7 +161,7 @@
 		document.getElementById("myBtn").click();
 	}
 	});
-	
+
 </script>
 	{% block javascript %}
     {% endblock %}		

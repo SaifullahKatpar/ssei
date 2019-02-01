@@ -28,5 +28,6 @@ rope==0.11.0
 singledispatch==3.4.0.3
 six==1.12.0
 SQLAlchemy==1.2.15
+textblob==0.15.2
 urllib3==1.24.1
 whitenoise==4.1.2

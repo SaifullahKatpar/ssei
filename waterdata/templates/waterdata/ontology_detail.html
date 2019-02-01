@@ -1,5 +1,5 @@
 
-{% extends 'waterdata/base.html' %}
+{% extends 'waterdata/imports.html' %}
 
 {% block title %}
 <title>Ontology Detail</title>
@@ -8,7 +8,7 @@
 
 {% block content %}
 
-	<div class="container-fluid">
+	<div class="container" style="margin-top:20px;">
 		<h1> {{ ontology.name|capfirst }}</h1>
 		URI: <a href="{{ontology.uri}}"> {{ ontology.uri }}</a>
 		<br>
