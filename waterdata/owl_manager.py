@@ -139,7 +139,7 @@ class RDFLibGraph():
         return self.query_graph(q)
 
 
-    # look the term in subjects, and return matching triples
+    # look the term in objects, and return matching triples
     def lookup_objects(self,pattern):
         q = """
         SELECT * WHERE {  
@@ -150,7 +150,7 @@ class RDFLibGraph():
         return self.query_graph(q)
 
 
-    # look the term in subjects, and return matching triples
+    # look the term in predicates, and return matching triples
     def lookup_predicates(self,pattern):
         q = """
         SELECT * WHERE {  
@@ -160,6 +160,21 @@ class RDFLibGraph():
         q= q.replace("pattern",pattern)
         return self.query_graph(q)
 
+
+    def lookup_classes(self):
+        q = """
+            PREFIX owl: <http://www.w3.org/2002/07/owl#>
+            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+            
+            
+            SELECT DISTINCT ?subject ?label ?supertype
+            WHERE {
+                { ?subject a owl:Class . } UNION { ?individual a ?subject . } .
+                OPTIONAL { ?subject rdfs:subClassOf ?supertype } .
+                OPTIONAL { ?subject rdfs:label ?label }
+            } ORDER BY ?subject
+            """
+        return self.query_graph(q)
 
 
 

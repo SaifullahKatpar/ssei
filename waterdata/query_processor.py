@@ -9,9 +9,13 @@
 import nltk
 from textblob import TextBlob
 from textblob import Word
+import spacy
 
 from .owl_manager import RDFLibGraph
 class QueryParser:
+    
+    words_for_similarity = []
+    nlp = spacy.load('en_core_web_sm')
 
     def __init__(self):
         # Punkt Tokenizer Models from NLTK
@@ -45,18 +49,28 @@ class QueryParser:
         sentence = TextBlob(q)
         words = sentence.words
         correct_q = ''
+        self.words_for_similarity = []
         for word in words:       
             similar_words = word.spellcheck()
             similar_word = str(similar_words[0][0])
-
+            self.words_for_similarity.append(similar_word)
             if word!= similar_word:
                 correct_q += '&nbsp<strong><i>'+similar_word+'</i></strong> '
             else:
                 correct_q += word+' '
         return correct_q
     
+    def get_nouns(self,q):
+        doc = self.nlp(q)
+        nouns = []
+        for token in doc:
+            if not token.is_oov and (token.pos_=='NOUN' or token.pos_=='PROPN'):
+                nouns.append(token)
+        return nouns
+
     
-    
+
+
 
 
 

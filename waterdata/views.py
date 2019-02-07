@@ -59,11 +59,14 @@ def water(request):
 
 # url for testing purpose
 def test(request):
-    rdf = owl_manager.rdflib_graph
-    triples = rdf.list_statements()
-    print(triples)
+    #rdf = owl_manager.rdflib_graph
+    #triples = rdf.lookup_classes()
+    #print(triples)
+    q_p = QueryParser()
+    triples = q_p.get_nouns('Show river flow in the ohio river in america')
     #return render(request,'waterdata/test.html',{'triples':triples})
-    return HttpResponse('Success!')
+    return render(request,'waterdata/test.html',{'triples':triples})
+
 # direct uri to the resource from WaterOnto
 def get_resource(request,resource_id):
     #parser = QueryParser()
