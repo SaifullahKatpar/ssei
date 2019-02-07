@@ -107,7 +107,7 @@ DATABASES = {
 
 }
 """
-DATABASES = {'default': dj_database_url.config()}
+DATABASES = {'default': dj_database_url.config(default='postgres://dzhzauideqvjxz:a75420eeaaecace67c5587a1c95a683bc309433d1eaef6c98571d095f924eb83@ec2-54-235-156-60.compute-1.amazonaws.com:5432/d8imng26qfp5hm')}
 
 '''     'default': {
         'ENGINE': 'django.db.backends.postgresql',
