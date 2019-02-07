@@ -92,8 +92,6 @@ WSGI_APPLICATION = 'ssei.wsgi.application'
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
- """
-
 DATABASES = {
 
      'default': {
@@ -107,7 +105,8 @@ DATABASES = {
  
 
 }
-
+"""
+DATABASES = {default: dj_database_url.config()}
 
 '''     'default': {
         'ENGINE': 'django.db.backends.postgresql',
