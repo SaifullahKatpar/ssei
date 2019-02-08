@@ -76,7 +76,7 @@ class RDFLibGraph():
     # class attributes
     # configuration variables for Postgres
     # TODO: change to Heroku Server
-    store_config_vars ="postgresql+psycopg2://postgres:saif666?@localhost:5432/watertestdb"
+    store_config_vars ="postgresql+psycopg2://postgres:dzhzauideqvjxz:a75420eeaaecace67c5587a1c95a683bc309433d1eaef6c98571d095f924eb83@ec2-54-235-156-60.compute-1.amazonaws.com:5432/d8imng26qfp5hm"
     # name of triple store
     store_name = "water_store"
     #namespaces
@@ -89,6 +89,7 @@ class RDFLibGraph():
         registerplugins()
         # get SQLAlchemy plugin to create a triple store 
         self.store = plugin.get("SQLAlchemy", Store)(identifier=self.store_name)
+        self.createGraph(ontolog="uploads/ontologies/water.owl")
         self.openGraph()
 
     # get the graph specifying graph_id

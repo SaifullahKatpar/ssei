@@ -5,7 +5,7 @@ from .models import Ontology
 from django.views import View
 from django.views.generic import ListView, DetailView
 from .query_processor import QueryParser
-from .owl_manager import OWLManager
+#from .owl_manager import OWLManager
 from .api_manager import APIManager
 from .formatters import DataframeFormatter
 # TODO: format results page for different ouputs
@@ -14,7 +14,7 @@ from .formatters import DataframeFormatter
 # cotains methods for performing NLTK operations on query
 parser = QueryParser()
 # this class creates instances of OWLSearch and RDFLibGraph names rdf and searcher
-owl_manager = OWLManager()
+#owl_manager = OWLManager()
 # contains mappings and REST api services 
 api_manager = APIManager()
 # format data returned from APIManager in presentable formats
