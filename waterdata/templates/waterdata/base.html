@@ -125,6 +125,7 @@
 <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>	
 <script src="{% static 'js/autocomplete.js' %}"></script>	
 <script type="text/javascript">
+
 	// code for autcompletion
 	autocomplete(document.getElementById("myInput"), suggestions);
 
@@ -160,9 +161,13 @@
 		// Trigger the button element with a click
 		document.getElementById("myBtn").click();
 	}
+	
+
+
 	});
 
 </script>
+
 	{% block javascript %}
     {% endblock %}		
 

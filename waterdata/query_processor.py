@@ -42,7 +42,7 @@ class QueryParser:
     
     def correct_query_all(self,q):
         b = TextBlob(q)
-        correct_q = b.correct()
+        correct_q = str(b.correct())
         return correct_q
 
     def correct_query_italicized(self,q):
@@ -64,12 +64,11 @@ class QueryParser:
         doc = self.nlp(q)
         nouns = []
         for token in doc:
-            if not token.is_oov and (token.pos_=='NOUN' or token.pos_=='PROPN'):
-                nouns.append(token)
+            if token.pos_ == 'NOUN' or token.pos_ =='PROPN':
+                nouns.append(token.text)
         return nouns
 
     
-
 
 
 

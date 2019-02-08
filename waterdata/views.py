@@ -39,8 +39,25 @@ class ResultView(View):
 
         ###############################
         suggestion = parser.correct_query_italicized(q)
+        nouns = parser.get_nouns(q)
+        wikipedia_url = 'https://en.wikipedia.org/wiki/'
+        #s = owl_manager.rdflib_graph.lookup_objects(q)
+        #for l in s:
+         #   for i in range(len(l)):
+          #      print(l[i])
+           #     print(type(l[i]))
+         
+        uris = []   
+        for n in nouns:
+            temp = {'title':n,'src':'Wikipedia','desc':wikipedia_url+n}
+            uris.append(temp)
+
+
+        linkedData = [{'title':'First linkedData','src':'SRC 1','desc':'DESC 1'},{'title':'First URI','src':'SRC 1','desc':'DESC 1'},{'title':'First URI','src':'SRC 1','desc':'DESC 1'}]   
+        apis = [{'title':'First API','src':'SRC 1','desc':'DESC 1'},{'title':'First URI','src':'SRC 1','desc':'DESC 1'},{'title':'First URI','src':'SRC 1','desc':'DESC 1'}]   
         
-        return render(request, self.template_name,{'form':self.form,'suggestion':suggestion})
+        return render(request, self.template_name,{'form':self.form,'suggestion':suggestion,'uris':uris,'linkedData':linkedData,'apis':apis})
+
 class OntologyList(ListView):
     template_name = 'waterdata/ontologies.html'
     model = Ontology
@@ -63,7 +80,7 @@ def test(request):
     #triples = rdf.lookup_classes()
     #print(triples)
     q_p = QueryParser()
-    triples = q_p.get_nouns('Show river flow in the ohio river in america')
+    triples = q_p.get_nouns('Show river flow in the ohio river in America')
     #return render(request,'waterdata/test.html',{'triples':triples})
     return render(request,'waterdata/test.html',{'triples':triples})
 
@@ -72,6 +89,6 @@ def get_resource(request,resource_id):
     #parser = QueryParser()
     #res = parser.find_uriref(resource_id)
     #print(len(res))
-    rdf = RDFLibGraph()
-    res = rdf.regex_search(resource_id)
-    return HttpResponse(res)
+    #rdf = RDFLibGraph()
+    #res = rdf.regex_search(resource_id)
+    return HttpResponse("Success")
