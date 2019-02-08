@@ -1,39 +1,176 @@
 <!DOCTYPE html>
 <html>
 {% load static %}
-
 <head>
+	<!-- TITLE -->
 	{% block title %}
 	{% endblock %}
-	
+	<!-- TITLE END-->
 
+	<!--STYLESHEET -->
 	<link rel="stylesheet" href="{% static 'css/autocomplete.css' %}">	
 	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
 	<link rel="stylesheet" href="{% static 'css/style.css' %}">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">	
+	<style>
+		div.sticky {
+		position: -webkit-sticky;
+		position: sticky;
+		top: 0;
+		background-color:white ;
+		padding: 10px;
+		margin-left: 0px;
+		z-index: 10;
+		}
+		div.border-search-box{
+			margin-top: 0px;
+			border-bottom: .5px solid black;
+			transition: margin-top 1s;
+			-webkit-transition: margin-top 0.5s;
+		}
+
+		div.suggest{
+			position: relative;
+		}
+
+		.btn {
+		border: none;
+		outline: none;
+		padding: 10px 16px;
+		background-color: #f1f1f1;
+		cursor: pointer;
+		}
+
+		/* Style the active class (and buttons on mouse-over) */
+		.active, .btn:hover {
+		background-color: #666;
+		color: white;
+		}
+
+		.search-box{
+			position: fixed;
+			margin-top: 100px;
+			margin-left: 350px;
+		}
+	</style>
+	<!--STYLESHEET END-->
+
+
 </head>
-<body class="bg-light">
-<div class="main">
 
-<div class="container">
-	{% block content %}
-    {% endblock %}		
-</div>
+<!--BODY START-->
+<body >
+	<!--MAIN START-->
+	<div class="main">
+		
+			<!-- COTAINER START-->
+				
+					<!-- START PLACEHOLDER FOR CODE BEFORE SEARCH BOX-->
+					<div class="container before-search">
+						{% block content-before %}
+						{% endblock %}		
+					</div>
 
+					<!-- END PLACEHOLDER FOR CODE BEFORE SEARCH BOX-->
+		
 
+						<!--START SEARCH BOX DIV-->
+						<div class="search-box">	
+							<div class="col-3 h2 icon" style="display:none;"> 
+								<img src="https://static.thenounproject.com/png/21266-200.png" height="50px" width="50px">
+								SSEI</div>
+							
+							<!--FORM START-->
+							<form 	autocomplete="off" action="/search/" method="get"   >
+								
+								<!--IN DIV FOR FORM START-->
+								<div class="autocomplete" id="search-form"style="width:600px;" >
+										{{ form }}
+								</div>
+								<!--IN DIV FOR FORM END-->
 
-</div>
+								<!--SEARCH BUTTON-->
+								<input type="submit" id="myBtn" value="Search">
+
+							</form>					
+							<!--FORM END-->
+									
+						</div>
+						<!--END SEARCH BOX DIV-->
+		
+					<!-- START PLACEHOLDER FOR CODE AFTER SEARCH BOX-->
+					<div class="container after-search">
+						
+							{% block content-after %}
+							{% endblock %}		
+					</div>
+				<!-- END PLACEHOLDER FOR CODE AFTER SEARCH BOX-->
+
+			
+			<!-- COTAINER END-->
+
+	</div>
+	<!--MAIN END -->
 
 </body>
+<!--BODY START-->
+
+
+<!-- load context_processor for classes from ontology-->
 <script type="text/javascript">
-	var countries = {{water_classes|safe}};	
-
+	var suggestions = {{water_classes|safe}};	
 </script>
-
 <script src="{% static 'jquery-3.3.1.min.js' %}"></script>
 <script src="{% static 'popper.min.js' %}"></script>
 <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>	
-<script src="{% static 'js/autocomplete.js' %}"></script>
+<script src="{% static 'js/autocomplete.js' %}"></script>	
+<script type="text/javascript">
+
+	// code for autcompletion
+	autocomplete(document.getElementById("myInput"), suggestions);
+
+	// change bg color on focus event
+	function changeBgColor(clr){
+		$("body").attr("class",clr);
+		if(document.title=="Results"){
+				if($(".search-box").css("margin-top")!="0px" && !$("body").hasClass("bg-dark")){
+					$(".search-box").css("margin-top", "0px");
+				}else{
+					$(".search-box").css("margin-top", "10px");
+
+				}				
+	        }
+		}
+
+
+	$(document).ready(function(){
+		$("input").attr("onfocus","changeBgColor(\"bg-dark\")");	
+		$("input").attr("onblur","changeBgColor(\"bg-light\")");	
+
+	});
+	
+		// Get the input field
+	var input = document.getElementById("myInput");
+
+	// Execute a function when the user releases a key on the keyboard
+	input.addEventListener("keyup", function(event) {
+	// Cancel the default action, if needed
+	event.preventDefault();
+	// Number 13 is the "Enter" key on the keyboard
+	if (event.keyCode === 13) {
+		// Trigger the button element with a click
+		document.getElementById("myBtn").click();
+	}
+	
+
+
+	});
+
+</script>
+
+	{% block javascript %}
+    {% endblock %}		
+
 
 
 </html>

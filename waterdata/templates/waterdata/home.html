@@ -1,78 +1,24 @@
 {% extends 'waterdata/base.html' %}
 
+<!-- TITLE -->
 {% block title %}
 <title>
 		Semantic Search Engine for Irrigation
 </title>
 {% endblock %}
+<!-- TITLE END-->
 
 
-{% block content %}
+{% block content-before %}
+<div class="jumbotron" style="padding: 20px;margin:auto;">
+	<center>
+			<h1 class="display-4">Semantic Search Engine for Irrigation</h1>
+			<p class="lead">A project for adding semantics to water data of United States and <strong>*</strong>Pakistan. <a href="{% url 'about' %}">Read More</a>...</p>
+			<hr class="my-4">
+			<p class="lead">Visit <a href="{% url 'water' %}"> WaterOnto</a></p>
 
-
-<center style="margin-top:30px;">
-		<div class="h2">
-			Semantic Search Engine for Irrigation
-		</div> 
-		<div class="p">
-			A project for adding semantics to water data of United States and <strong>*</strong>Pakistan. <a href="{% url 'about' %}">Read More</a>...
-		</div>
-		<br>
-
-</center>
-
-<div class="container search-box">
-	
-	<form 	autocomplete="off" action="/search/" method="get">
-  		<div class="autocomplete" style="width:500px;">
-        	{{ form }}
-  		</div>
-    <input type="submit" value="Search">
-
-	</form>	
-	
+	</center>
 </div>
-<br>
-
-
-
-<!--
-<center>
-	<p>
-		<a class="btn btn-dark" data-toggle="collapse" href="#filter" role="button" aria-expanded="false" aria-controls="collapseExample">
-		 Apply Filters
-		</a>
-	  </p>
-	
-	  <div class="collapse" id="filter">
-			<div class="form-check form-check-inline">
-				{% for filter in filters %}
-					<input type="checkbox" class="form-check-input" id="filter-input">
-					<label class="form-check-label" for="filter-input">  {{ filter|capfirst }} </label>
-				{% endfor %}
-			</div>	  
-	</div>
-	
-
-</center>
-
--->
-
-
-<!--
-<br><br><br>
-<center>
-		<div class="p">
-				Visit <a href="{% url 'water' %}"> WaterOnto</a>
-		</div>
-		<div class="p">
-				Visit <a href="{% url 'ontologies' %}"> other ontologies</a>
-		</div>		
-</center>
-
--->
-
-
 {% endblock %}
 
 

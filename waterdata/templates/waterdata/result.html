@@ -1,36 +1,149 @@
 {% extends 'waterdata/base.html' %}
 
+<!-- TITLE -->
 {% block title %}
 <title>
-		{{query}}
+		Results
 </title>
 {% endblock %}
+<!-- TITLE END-->
 
+<!-- ADD HTML HERE-->
+{% block content-after%}
+<script>
+        function showDiv(num) {
+                if(num==1){
+                        var x = document.getElementById("catDiv1");
+                        x.style.display = "block";
+                        var y = document.getElementById("catDiv2");
+                        var z = document.getElementById("catDiv3");
+                        y.style.display = "none";
+                        z.style.display = "none";
 
-{% block content %}
-<div class="container" style="margin-left: 90px;margin-top:10px;">
+                }
+                if(num==2){
+                        var x = document.getElementById("catDiv2");
+                        x.style.display = "block";
+                        var y = document.getElementById("catDiv1");
+                        var z = document.getElementById("catDiv3");
+                        y.style.display = "none";
+                        z.style.display = "none";
+                }
+                if(num==3){
+                        var x = document.getElementById("catDiv3");
+                        x.style.display = "block";
+                        var y = document.getElementById("catDiv1");
+                        var z = document.getElementById("catDiv2");
+                        y.style.display = "none";
+                        z.style.display = "none";
+                }
+}
+</script>
+<center>
+        <div id="myDIV">
+                <button class="btn active"  onclick="showDiv(1)">URIs</button>
+                <button class="btn"  onclick="showDiv(2)">LinkedData</button>
+                <button class="btn"  onclick="showDiv(3)">APIs</button>
+        </div>
+        <center>
+                        <!-- DIV FOR SUGGEST START-->
+                        <div class="suggest" style="display: none;">
+                                        Did you mean:   {{suggestion|safe}}
+                        </div>
+                        <!-- DIV FOR SUGGEST END-->
 
-    <form 	autocomplete="off" action="/search/" method="get">
-            <div class="autocomplete" style="width:800px;">
-            {{ form }}
-            </div>
-    <input type="submit" value="Search">
+        </center>
+</center>
 
-    </form>	
-    
-</div>            
-    
-<!-- TODO: displayt results of query here -->
-<!--
-<div class="container">
-    {% for r in results %}
-       {{r}}
-    {% endfor %}
+<div id="catDiv1">
+
+        {% for item in uris %}
+        
+        <div class="list-group" style="padding-top:20px;display: block;">
+                <a href="{{item.url}}" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">{{item.title}}</h5>
+                <small>{{item.src}}</small>
+                </div>
+                <p class="mb-1">{{item.desc}}</p>
+                </a>
+        </div>
+        {% endfor %}
 </div>
--->
+<div id="catDiv2">
+
+        {% for item in linkedData %}
+        <div class="list-group" style="padding-top:20px;">
+                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">{{item.title}}</h5>
+                <small>{{item.src}}</small>
+                </div>
+                <p class="mb-1">{{item.desc}}</p>
+                </a>
+        </div>
+        {% endfor %}
+</div>
+<div id="catDiv3">
+
+        {% for item in apis %}
+        <div class="list-group" style="padding-top:20px;">
+                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">{{item.title}}</h5>
+                <small>{{item.src}}</small>
+                </div>
+                <p class="mb-1">{{item.desc}}</p>
+                </a>
+        </div>
+        {% endfor %}
+</div>
 
 
 
 {% endblock %}
+<!-- HTML END-->
+
+<!-- ADD JAVASCRIPT HERE -->
+{% block javascript %}
+
+<script>
+
+
+
+	$(document).ready(function(){
+
+        $(".search-box").addClass("sticky");
+        
+        if($( ".suggest" ).has( "i" ).length){
+            $(".suggest").css("display", "block");
+        }
+    
+        $(".search-box").addClass("border-search-box");
+
+        $(".search-box").addClass("row");
+        $(".icon").css("display","block");
+
+// Get the container element
+var btnContainer = document.getElementById("myDIV");
+
+// Get all buttons with class="btn" inside the container
+var btns = btnContainer.getElementsByClassName("btn");
+
+// Loop through the buttons and add the active class to the current/clicked button
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+
+
+    }); 
+   
+</script>
+{% endblock %}		
+<!-- JAVASCRIPT END-->
 
 
