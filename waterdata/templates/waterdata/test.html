@@ -1,20 +1,3 @@
-{% extends 'waterdata/base.html' %}
-
-{% block title %}
-<title>
-		Ontologies in SSEI
-</title>
-
-{% endblock %}
-
-
-{% block content %}
-
-
-<div class="container-fluid">
-        {% for s,p,o in triples %}
-        {{s}} ,{{p}},{{o}}
+		{% for k in triples %}
+		{{k}}
 		{% endfor %}
-	</div>
-
-{% endblock %}

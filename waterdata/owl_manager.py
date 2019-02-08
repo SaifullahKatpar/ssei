@@ -62,8 +62,8 @@ class OWLSearch():
         # ins is the list of all classes that match the query
         matched_classes = self.onto.search(iri = '*'+q)
         # res is the list of instances of the first of all matched classes 
-        #individuals = [ str(ins).split('.')[1] for ins in matched_classes[0].instances()]        
-        return str(matched_classes[0])
+        individuals = [ str(ins).split('.')[1] for ins in matched_classes[0].instances()]        
+        return individuals
 
 # class: RDFGraph, methods: openGraph, createGraph, add_triple,
 # query_graph, get_triples, predicates_of, objects_of, subjects_of,
@@ -139,7 +139,7 @@ class RDFLibGraph():
         return self.query_graph(q)
 
 
-    # look the term in subjects, and return matching triples
+    # look the term in objects, and return matching triples
     def lookup_objects(self,pattern):
         q = """
         SELECT * WHERE {  
@@ -150,7 +150,7 @@ class RDFLibGraph():
         return self.query_graph(q)
 
 
-    # look the term in subjects, and return matching triples
+    # look the term in predicates, and return matching triples
     def lookup_predicates(self,pattern):
         q = """
         SELECT * WHERE {  
@@ -160,6 +160,12 @@ class RDFLibGraph():
         q= q.replace("pattern",pattern)
         return self.query_graph(q)
 
+    # look the term in predicates, and return matching triples
+    def lookup_classes(self,pattern):
+        q = """
+        select distinct ?Concept where {[] a ?Concept} LIMIT 100
+        """
+        return self.query_graph(q)
 
 
 

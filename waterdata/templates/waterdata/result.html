@@ -3,63 +3,145 @@
 <!-- TITLE -->
 {% block title %}
 <title>
-		{{query}}
+		Results
 </title>
 {% endblock %}
 <!-- TITLE END-->
 
 <!-- ADD HTML HERE-->
 {% block content-after%}
+<script>
+        function showDiv(num) {
+                if(num==1){
+                        var x = document.getElementById("catDiv1");
+                        x.style.display = "block";
+                        var y = document.getElementById("catDiv2");
+                        var z = document.getElementById("catDiv3");
+                        y.style.display = "none";
+                        z.style.display = "none";
 
-<div class="row">
+                }
+                if(num==2){
+                        var x = document.getElementById("catDiv2");
+                        x.style.display = "block";
+                        var y = document.getElementById("catDiv1");
+                        var z = document.getElementById("catDiv3");
+                        y.style.display = "none";
+                        z.style.display = "none";
+                }
+                if(num==3){
+                        var x = document.getElementById("catDiv3");
+                        x.style.display = "block";
+                        var y = document.getElementById("catDiv1");
+                        var z = document.getElementById("catDiv2");
+                        y.style.display = "none";
+                        z.style.display = "none";
+                }
+}
+</script>
+<center>
+        <div id="myDIV">
+                <button class="btn active"  onclick="showDiv(1)">URIs</button>
+                <button class="btn"  onclick="showDiv(2)">LinkedData</button>
+                <button class="btn"  onclick="showDiv(3)">APIs</button>
+        </div>
+        <center>
+                        <!-- DIV FOR SUGGEST START-->
+                        <div class="suggest" style="display: none;">
+                                        Did you mean:   {{suggestion|safe}}
+                        </div>
+                        <!-- DIV FOR SUGGEST END-->
 
-        <div class="col-4">
-                <div class="list-group" id="list-tab" role="tablist">
-                  <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Home</a>
-                  <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Profile</a>
-                  <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Messages</a>
-                  <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Settings</a>
+        </center>
+</center>
 
-                  <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Home</a>
-                  <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Profile</a>
-                  <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Messages</a>
-                  <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Settings</a>
-                  <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Home</a>
-                  <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Profile</a>
-                  <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Messages</a>
-                  <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Settings</a>
-                  <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Home</a>
-                  <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Profile</a>
-                  <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Messages</a>
-                  <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Settings</a>
-                  <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Home</a>
-                  <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Profile</a>
-                  <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Messages</a>
-                  <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Settings</a>
+<div id="catDiv1">
 
-
-                </div>
-
-            </div>
-
+        {% for item in uris %}
         
+        <div class="list-group" style="padding-top:20px;display: block;">
+                <a href="{{item.url}}" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">{{item.title}}</h5>
+                <small>{{item.src}}</small>
+                </div>
+                <p class="mb-1">{{item.desc}}</p>
+                </a>
+        </div>
+        {% endfor %}
+</div>
+<div id="catDiv2">
+
+        {% for item in linkedData %}
+        <div class="list-group" style="padding-top:20px;">
+                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">{{item.title}}</h5>
+                <small>{{item.src}}</small>
+                </div>
+                <p class="mb-1">{{item.desc}}</p>
+                </a>
+        </div>
+        {% endfor %}
+</div>
+<div id="catDiv3">
+
+        {% for item in apis %}
+        <div class="list-group" style="padding-top:20px;">
+                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">{{item.title}}</h5>
+                <small>{{item.src}}</small>
+                </div>
+                <p class="mb-1">{{item.desc}}</p>
+                </a>
+        </div>
+        {% endfor %}
 </div>
 
 
-{% endblock %}
 
+{% endblock %}
 <!-- HTML END-->
 
 <!-- ADD JAVASCRIPT HERE -->
 {% block javascript %}
+
 <script>
+
+
+
 	$(document).ready(function(){
+
         $(".search-box").addClass("sticky");
         
-        if($( ".suggest" ).has( "button" ).length){
+        if($( ".suggest" ).has( "i" ).length){
             $(".suggest").css("display", "block");
         }
-    });    
+    
+        $(".search-box").addClass("border-search-box");
+
+        $(".search-box").addClass("row");
+        $(".icon").css("display","block");
+
+// Get the container element
+var btnContainer = document.getElementById("myDIV");
+
+// Get all buttons with class="btn" inside the container
+var btns = btnContainer.getElementsByClassName("btn");
+
+// Loop through the buttons and add the active class to the current/clicked button
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+
+
+    }); 
+   
 </script>
 {% endblock %}		
 <!-- JAVASCRIPT END-->
