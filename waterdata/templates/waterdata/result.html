@@ -41,9 +41,9 @@
 </script>
 <center>
         <div id="myDIV">
-                <button class="btn active"  onclick="showDiv(1)">URIs</button>
-                <button class="btn"  onclick="showDiv(2)">LinkedData</button>
-                <button class="btn"  onclick="showDiv(3)">APIs</button>
+                <button class="btn active"  onclick="showDiv(1)">Define</button>
+                <button class="btn"  onclick="showDiv(2)">APIs</button>
+                <button class="btn"  onclick="showDiv(3)">Data</button>
         </div>
         <center>
                         <!-- DIV FOR SUGGEST START-->
@@ -52,51 +52,76 @@
                         </div>
                         <!-- DIV FOR SUGGEST END-->
 
+                
         </center>
+                        <!-- DIV FOR SUGGEST START-->
+                        <div class="synonym" style="display: none;float: right;margin-left: 100px;">
+                                <button class="btn bg-info">You Could Also Try
+                                                <span class="badge badge-light">{{count}}</span>
+                                </button>
+                                <ul class="list-group">
+                                {% for key,value in synonyms %}
+                                        {{key}}
+                                                                        
+                                        {% for val in value %}
+                                                <li class="list-group-item list-group-item-info"><a href="#">{{val}}</a></li>
+                                        {% endfor %}
+                                {% endfor %}
+                                </ul>
+                        </div>
+                        <!-- DIV FOR SUGGEST END-->
+
+
 </center>
 
-<div id="catDiv1">
+<div id="catDiv1" style="display: block;">
 
         {% for item in uris %}
-        
-        <div class="list-group" style="padding-top:20px;display: block;">
+        <div class="list-group" style="padding-top:20px;">
                 <a href="{{item.url}}" class="list-group-item list-group-item-action flex-column align-items-start">
                 <div class="d-flex w-100 justify-content-between">
                 <h5 class="mb-1">{{item.title}}</h5>
                 <small>{{item.src}}</small>
                 </div>
-                <p class="mb-1">{{item.desc}}</p>
+                <p class="mb-1">{{item.url}}</p>
                 </a>
         </div>
         {% endfor %}
-</div>
-<div id="catDiv2">
-
-        {% for item in linkedData %}
+        {% for item in wateronto %}
         <div class="list-group" style="padding-top:20px;">
-                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                <a href="{{item.COMMENT}}" class="list-group-item list-group-item-action flex-column align-items-start">
                 <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">{{item.title}}</h5>
-                <small>{{item.src}}</small>
+                <h5 class="mb-1">{{item.COMMENT}}</h5>
+                <small>{{item.SRC}}</small>
                 </div>
-                <p class="mb-1">{{item.desc}}</p>
+                <p class="mb-1">{{item.URI}}</p>
+                <p class="mb-1">{{item.LABEL}}</p>
                 </a>
         </div>
         {% endfor %}
-</div>
-<div id="catDiv3">
 
-        {% for item in apis %}
-        <div class="list-group" style="padding-top:20px;">
-                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">{{item.title}}</h5>
-                <small>{{item.src}}</small>
-                </div>
-                <p class="mb-1">{{item.desc}}</p>
-                </a>
-        </div>
-        {% endfor %}
+</div>
+<div id="catDiv2" style="display: none;">
+        <div class="h4"> APIs Under Construction!</div>
+</div>
+
+<style>
+        .table{
+                width:50%;
+                font-size: 10px;
+                overflow-x:auto;
+                padding: 5px;
+                border-collapse: collapse;
+        }
+        tr, td{
+                padding: 5px;
+        }
+</style>
+<div id="catDiv3"    style="display: none;"  data-section="data">
+        <div class="container"></div>
+        {{data|safe}}
+        <div class="h4"> Data Under Construction!</div>
+
 </div>
 
 
@@ -114,9 +139,14 @@
 	$(document).ready(function(){
 
         $(".search-box").addClass("sticky");
-        
+        $(".dataframe").addClass("table");
+        $("tr").addClass("success");
+
         if($( ".suggest" ).has( "i" ).length){
             $(".suggest").css("display", "block");
+        }
+        if($( ".synonym" ).has( "li" ).length){
+            $(".synonym").css("display", "block");
         }
     
         $(".search-box").addClass("border-search-box");

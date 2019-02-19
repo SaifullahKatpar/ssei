@@ -5,7 +5,7 @@ from .models import Ontology
 from django.views import View
 from django.views.generic import ListView, DetailView
 from .query_processor import QueryParser
-#from .owl_manager import OWLManager
+from .owl_manager import OWLManager
 from .api_manager import APIManager
 from .formatters import DataframeFormatter
 # TODO: format results page for different ouputs
@@ -14,9 +14,9 @@ from .formatters import DataframeFormatter
 # cotains methods for performing NLTK operations on query
 parser = QueryParser()
 # this class creates instances of OWLSearch and RDFLibGraph names rdf and searcher
-#owl_manager = OWLManager()
+owl_manager = OWLManager()
 # contains mappings and REST api services 
-api_manager = APIManager()
+#api_manager = APIManager()
 # format data returned from APIManager in presentable formats
 formatter = DataframeFormatter()
 
@@ -27,6 +27,10 @@ class ResultView(View):
     template_name = 'waterdata/result.html'
     # input element of html, or search box
     form = QueryForm()
+    url = "https://waterservices.usgs.gov/nwis/site/?format=rdb&stateCd=NY"
+    content = APIManager().get_content_from_url(url)
+    df = formatter.text_to_df(content)
+    html_df = formatter.df_to_html(df.iloc[:10,:5])
 
     # get the query by user from the GET parameters (dictionary containing names of elements as the keys)    
     def get(self, request):
@@ -35,28 +39,16 @@ class ResultView(View):
         ################################
         #INPUT: query 
         #OUPUT: list of URIs of resources, href to linked data page, list of uris of dbpedia resources
-
-
-        ###############################
         suggestion = parser.correct_query_italicized(q)
-        nouns = parser.get_nouns(q)
-        wikipedia_url = 'https://en.wikipedia.org/wiki/'
-        #s = owl_manager.rdflib_graph.lookup_objects(q)
-        #for l in s:
-         #   for i in range(len(l)):
-          #      print(l[i])
-           #     print(type(l[i]))
-         
-        uris = []   
-        for n in nouns:
-            temp = {'title':n,'src':'Wikipedia','desc':wikipedia_url+n}
-            uris.append(temp)
+        synonyms= parser.get_synonyms(q).items()
+        count = 0
+        for k, v in synonyms:
+            for _ in v:
+                count+=1
+        uris = parser.get_wiki_urls(q)        
+        owl_results = owl_manager.rdflib_graph.regex_search(q)
 
-
-        linkedData = [{'title':'First linkedData','src':'SRC 1','desc':'DESC 1'},{'title':'First URI','src':'SRC 1','desc':'DESC 1'},{'title':'First URI','src':'SRC 1','desc':'DESC 1'}]   
-        apis = [{'title':'First API','src':'SRC 1','desc':'DESC 1'},{'title':'First URI','src':'SRC 1','desc':'DESC 1'},{'title':'First URI','src':'SRC 1','desc':'DESC 1'}]   
-        
-        return render(request, self.template_name,{'form':self.form,'suggestion':suggestion,'uris':uris,'linkedData':linkedData,'apis':apis})
+        return render(request, self.template_name,{'form':self.form,'suggestion':suggestion,'synonyms':synonyms,'count':count,'uris':uris,'wateronto':owl_results,'data':self.html_df})
 
 class OntologyList(ListView):
     template_name = 'waterdata/ontologies.html'
@@ -74,21 +66,8 @@ def ontology_detail(request,ontology_id):
 def water(request):
     return render(request,'waterdata/water.html')
 
-# url for testing purpose
 def test(request):
-    #rdf = owl_manager.rdflib_graph
-    #triples = rdf.lookup_classes()
-    #print(triples)
-    q_p = QueryParser()
-    triples = q_p.get_nouns('Show river flow in the ohio river in America')
-    #return render(request,'waterdata/test.html',{'triples':triples})
-    return render(request,'waterdata/test.html',{'triples':triples})
-
-# direct uri to the resource from WaterOnto
-def get_resource(request,resource_id):
-    #parser = QueryParser()
-    #res = parser.find_uriref(resource_id)
-    #print(len(res))
-    #rdf = RDFLibGraph()
-    #res = rdf.regex_search(resource_id)
-    return HttpResponse("Success")
+    return render(request,'waterdata/test.html')
+def get_resource(request):
+    return HttpResponse('!')
+    

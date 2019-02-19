@@ -19,6 +19,8 @@ from rdflib.plugin import register
 from rdflib.plugin import Parser
 from rdflib.plugin import Serializer
 from rdflib.namespace import *
+from SPARQLWrapper import SPARQLWrapper, JSON
+from rdflib import Graph
 
 
 
@@ -76,7 +78,7 @@ class RDFLibGraph():
     # class attributes
     # configuration variables for Postgres
     # TODO: change to Heroku Server
-    store_config_vars ="postgresql+psycopg2://postgres:dzhzauideqvjxz:a75420eeaaecace67c5587a1c95a683bc309433d1eaef6c98571d095f924eb83@ec2-54-235-156-60.compute-1.amazonaws.com:5432/d8imng26qfp5hm"
+    store_config_vars ="postgresql+psycopg2://postgres:saif666?@localhost:5432/watertestdb"
     # name of triple store
     store_name = "water_store"
     #namespaces
@@ -89,7 +91,6 @@ class RDFLibGraph():
         registerplugins()
         # get SQLAlchemy plugin to create a triple store 
         self.store = plugin.get("SQLAlchemy", Store)(identifier=self.store_name)
-        self.createGraph(ontolog="uploads/ontologies/water.owl")
         self.openGraph()
 
     # get the graph specifying graph_id
@@ -119,13 +120,7 @@ class RDFLibGraph():
         matched_in_subjects = self.lookup_subjects(pattern)
         matched_in_objects = self.lookup_objects(pattern )
         matched_in_predicates = self.lookup_predicates(pattern)
-        matched_in_triples = ''
-        for match in matched_in_subjects:
-            matched_in_triples+= str(match)
-        for match in matched_in_objects:
-            matched_in_triples+= str(match)
-        for match in matched_in_predicates:
-            matched_in_triples+= str(match)
+        matched_in_triples = matched_in_objects + matched_in_predicates + matched_in_subjects
 
         return matched_in_triples
 
@@ -137,7 +132,16 @@ class RDFLibGraph():
             FILTER (regex(?s, "pattern","i")) }
         """
         q= q.replace("pattern",pattern)
-        return self.query_graph(q)
+        results = self.query_graph(q)        
+        str_results = []
+        for r in results:
+            temp = dict()
+            temp['SRC'] = 'WaterOnto'
+            temp['URI'] = str(r[0])
+            temp['LABEL'] = str(r[1])
+            temp['COMMENT'] = str(r[2])
+            str_results.append(temp)
+        return str_results
 
 
     # look the term in objects, and return matching triples
@@ -148,7 +152,16 @@ class RDFLibGraph():
             FILTER (regex(?o, "pattern","i")) }
         """
         q= q.replace("pattern",pattern)
-        return self.query_graph(q)
+        results = self.query_graph(q)        
+        str_results = []
+        for r in results:
+            temp = dict()
+            temp['SRC'] = 'WaterOnto'
+            temp['URI'] = str(r[0])
+            temp['LABEL'] = str(r[1])
+            temp['COMMENT'] = str(r[2])
+            str_results.append(temp)
+        return str_results
 
 
     # look the term in predicates, and return matching triples
@@ -159,7 +172,16 @@ class RDFLibGraph():
             FILTER (regex(?p, "pattern","i")) }
         """
         q= q.replace("pattern",pattern)
-        return self.query_graph(q)
+        results = self.query_graph(q)        
+        str_results = []
+        for r in results:
+            temp = dict()
+            temp['SRC'] = 'WaterOnto'
+            temp['URI'] = str(r[0])
+            temp['LABEL'] = str(r[1])
+            temp['COMMENT'] = str(r[2])
+            str_results.append(temp)
+        return str_results
 
     # look the term in predicates, and return matching triples
     def lookup_classes(self,pattern):
@@ -167,8 +189,6 @@ class RDFLibGraph():
         select distinct ?Concept where {[] a ?Concept} LIMIT 100
         """
         return self.query_graph(q)
-
-
 
 
 

@@ -10,11 +10,11 @@ import nltk
 from textblob import TextBlob
 from textblob import Word
 import spacy
-
+from itertools import chain
+from nltk.corpus import wordnet
 from .owl_manager import RDFLibGraph
 class QueryParser:
     
-    words_for_similarity = []
     nlp = spacy.load('en_core_web_sm')
 
     def __init__(self):
@@ -49,11 +49,9 @@ class QueryParser:
         sentence = TextBlob(q)
         words = sentence.words
         correct_q = ''
-        self.words_for_similarity = []
         for word in words:       
             similar_words = word.spellcheck()
             similar_word = str(similar_words[0][0])
-            self.words_for_similarity.append(similar_word)
             if word!= similar_word:
                 correct_q += '&nbsp<strong><i>'+similar_word+'</i></strong> '
             else:
@@ -67,6 +65,74 @@ class QueryParser:
             if token.pos_ == 'NOUN' or token.pos_ =='PROPN':
                 nouns.append(token.text)
         return nouns
+
+    def remove_stop_words(self,q):
+        doc = self.nlp(q)
+        words = []
+        for token in doc:
+            if not token.is_stop:
+                words.append(token.text)
+        return words
+
+    def get_wiki_urls(self,q):
+        words = self.remove_stop_words(q)
+        wikipedia_url = 'https://en.wikipedia.org/wiki/'
+        dbpedia_url = 'http://dbpedia.org/page/'
+        uris = []
+
+        if len(words)>1:            
+            main_word = '_'.join(words)
+            main_word_title = ' '.join(words)
+            temp = {'title':main_word_title,'src':'DBPedia','url':dbpedia_url+main_word,'desc':'description'}
+            uris.append(temp)
+            temp = {'title':main_word_title,'src':'Wikipedia','url':wikipedia_url+main_word,'desc':'description'}
+            uris.append(temp)
+        for w in words:
+            temp = {'title':w,'src':'Wikipedia','url':wikipedia_url+w,'desc':'description'}
+            uris.append(temp)
+        for w in words:
+            temp = {'title':w,'src':'DBPedia','url':dbpedia_url+w,'desc':'description'}
+            uris.append(temp)
+
+        return uris
+
+
+    def get_dbpedia_urls(self,q):
+        words = self.remove_stop_words(q)
+        dbpedia_url = 'http://dbpedia.org/page/'
+        uris = []
+        for w in words:
+            temp = {'title':w,'src':'DBPedia','desc':dbpedia_url+ w.capitalize()}
+            uris.append(temp)
+        return uris
+
+    
+
+    def get_synonyms(self,q):
+        words = self.remove_stop_words(q)
+        synonym_dict = dict()
+        for word in words:
+            synonyms = wordnet.synsets(word)
+            lemmas = set(chain.from_iterable([w.lemma_names() for w in synonyms]))            
+            synonym_dict[word] = lemmas
+        return synonym_dict
+
+"""
+            diff_lemmas = []
+            for w in lemmas:                
+                if w!=word:
+                    diff_lemmas.append(w)
+
+    def get_def(self,word):
+        syns = wordnet.synsets(word)
+        return syns[0].definition()
+
+"""
+        
+        
+        
+        
+
 
     
 
