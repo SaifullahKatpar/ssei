@@ -7,16 +7,17 @@
 #       - 
  '''
 import nltk
+from nltk.corpus import stopwords 
+from nltk.tokenize import word_tokenize 
+
+
 from textblob import TextBlob
 from textblob import Word
-import spacy
 from itertools import chain
 from nltk.corpus import wordnet
-from .owl_manager import RDFLibGraph
+#from .owl_manager import RDFLibGraph
 class QueryParser:
     
-    nlp = spacy.load('en_core_web_sm')
-
     def __init__(self):
         # Punkt Tokenizer Models from NLTK
         #nltk_deps = ['punkt', 'averaged_perceptron_tagger']
@@ -25,10 +26,23 @@ class QueryParser:
             nltk.data.find('wordnet.zip')
             nltk.data.find('punkt.zip')
             nltk.data.find('averaged_perceptron_tagger.zip')
+            nltk.data.find('stopwords.zip')
+
         except LookupError:
             nltk.download('wordnet')
             nltk.download('punkt')
             nltk.download('averaged_perceptron_tagger')
+            nltk.download('stopwords')
+
+    def remove_stop_words(self, sentence):
+        stop_words = set(stopwords.words('english')) 
+        word_tokens = word_tokenize(sentence) 
+        filtered_sentence = [w for w in word_tokens if not w in stop_words]         
+        filtered_sentence = [] 
+        for w in word_tokens: 
+            if w not in stop_words: 
+                filtered_sentence.append(w) 
+        return filtered_sentence
 
     def get_language(self,q):
         b = TextBlob(q)
@@ -58,22 +72,8 @@ class QueryParser:
                 correct_q += word+' '
         return correct_q
     
-    def get_nouns(self,q):
-        doc = self.nlp(q)
-        nouns = []
-        for token in doc:
-            if token.pos_ == 'NOUN' or token.pos_ =='PROPN':
-                nouns.append(token.text)
-        return nouns
 
-    def remove_stop_words(self,q):
-        doc = self.nlp(q)
-        words = []
-        for token in doc:
-            if not token.is_stop:
-                words.append(token.text)
-        return words
-
+    """
     def get_wiki_urls(self,q):
         words = self.remove_stop_words(q)
         wikipedia_url = 'https://en.wikipedia.org/wiki/'
@@ -105,39 +105,36 @@ class QueryParser:
             temp = {'title':w,'src':'DBPedia','desc':dbpedia_url+ w.capitalize()}
             uris.append(temp)
         return uris
-
     
-
+"""
     def get_synonyms(self,q):
-        words = self.remove_stop_words(q)
+        words = q.split(' ')
         synonym_dict = dict()
         for word in words:
             synonyms = wordnet.synsets(word)
-            lemmas = set(chain.from_iterable([w.lemma_names() for w in synonyms]))            
-            synonym_dict[word] = lemmas
+            lemmas = set(chain.from_iterable([w.lemma_names() for w in synonyms]))                        
+            synonym_dict[word] = list(lemmas)
         return synonym_dict
 
-"""
-            diff_lemmas = []
-            for w in lemmas:                
-                if w!=word:
-                    diff_lemmas.append(w)
+    def get_synonyms(self,q):
+        words = q.split(' ')
+        synonym_dict = dict()
+        count = 0
+        for word in words:
+            synonyms = wordnet.synsets(word)
+            lemmas = set(chain.from_iterable([w.lemma_names() for w in synonyms]))                        
+            count+= len(lemmas)
+            synonym_dict[word] = list(lemmas)
+        return synonym_dict,count
 
-    def get_def(self,word):
-        syns = wordnet.synsets(word)
-        return syns[0].definition()
+    word_list = ['water','irrigation','river','country','geography','weather','air','ice','measurement','size','number']
 
-"""
-        
-        
-        
-        
-
-
-    
-
-
-
-
-
+    def get_sim(self,q):
+        synset_words = [wordnet.synset(word+'.n.01') for word in self.word_list]
+        similarities = []
+        for word in q.split():
+            word = wordnet.synset(word+'.n.01')
+            for word_to_match in synset_words:
+                similarities.append(word.wup_similarity(word_to_match))
+        return any( i>0.30 for i in similarities)
 

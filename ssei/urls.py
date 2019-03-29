@@ -26,6 +26,7 @@ urlpatterns = [
     path('search/', ResultView.as_view(),name='result'),
         path('', waterdata.views.home,name="home"),
     path('about/', waterdata.views.about,name="about"),
+    #path('add/', waterdata.views.add,name="add"),
     path('water/', waterdata.views.water,name="water"),    
     path('resource/<resource_id>', waterdata.views.get_resource,name="resource"),    
     path('ontologies/', OntologyList.as_view(),name="ontologies"),

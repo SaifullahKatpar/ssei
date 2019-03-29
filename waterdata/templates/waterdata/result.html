@@ -40,7 +40,7 @@
 }
 </script>
 <center>
-        <div id="myDIV">
+        <div id="myDIV" style="display: none">
                 <button class="btn active"  onclick="showDiv(1)">Define</button>
                 <button class="btn"  onclick="showDiv(2)">APIs</button>
                 <button class="btn"  onclick="showDiv(3)">Data</button>
@@ -59,8 +59,11 @@
                                 <button class="btn bg-info">You Could Also Try
                                                 <span class="badge badge-light">{{count}}</span>
                                 </button>
+                                <!--
+                                        
+                                -->
                                 <ul class="list-group">
-                                {% for key,value in synonyms %}
+                                {% for key,value in synonyms.items %}
                                         {{key}}
                                                                         
                                         {% for val in value %}
@@ -87,18 +90,73 @@
                 </a>
         </div>
         {% endfor %}
-        {% for item in wateronto %}
-        <div class="list-group" style="padding-top:20px;">
-                <a href="{{item.COMMENT}}" class="list-group-item list-group-item-action flex-column align-items-start">
-                <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">{{item.COMMENT}}</h5>
-                <small>{{item.SRC}}</small>
+<!--
+        {% if wateronto %}
+                {% for item in wateronto %}
+                <div class="list-group" style="padding-top:20px;">
+                        <a href="{{item.COMMENT}}" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">{{item.URI}}</h5>
+                        <small>{{item.SRC}}</small>
+                        </div>
+                        <p class="mb-1">{{item.LABEL}}</p>
+                        <p class="mb-1">{{item.COMMENT}}</p>
+                        </a>
                 </div>
-                <p class="mb-1">{{item.URI}}</p>
-                <p class="mb-1">{{item.LABEL}}</p>
-                </a>
-        </div>
+                {% endfor %}
+        {% else %}
+                <div class="h3">
+                               "{{q}}" does not match any term. 
+                </div>
+        {% endif %}
+
+-->        
+
+        {% if wateronto %}
+        {% for item in wateronto %}
+        <div class="list-group" style="padding-top:20px;" >
+                {% for key, value in wateronto.items %}
+                <div class="list-group-item">
+                        <a href="{{value.iri}}">
+                                <div class="d-flex w-100 justify-content-between">
+                                        <h5 class="mb-1">{{key}}</h5>
+                                        <small>WaterOnto</small>
+                                </div>
+                                <p class="mb-1"><strong>IRI:</strong> <a href="{{value.iri}}">{{value.iri}}</a> </p>
+                                {% if value.comment %}
+                                <p class="mb-1"><strong>Comments:</strong> {% for com in value.comment%}{{com}}{% if not forloop.last%},{% endif%}{% endfor %} </p>
+                                {% else%}
+                                <p class="mb-1"><strong>Comments:</strong> Not Available </p>
+                                {% endif %}
+                                {% if value.subclasses %}
+                                <p class="mb-1"><strong>Subclasses: </strong> {% for val in value.subclasses %} {{val}}{% if not forloop.last%},{% endif%}{% endfor %} </p>
+                                {% else%}
+                                <p class="mb-1"><strong>Subclasses: </strong> Not Available </p>
+                                {% endif %}
+                                {% if value.ancestors %}
+                                <p class="mb-1"><strong>Ancestors:</strong> {% for val in value.ancestors %} {{val}}{% if not forloop.last%},{% endif%} {% endfor %}</p>
+
+                                {% else%}
+                                <p class="mb-1"><strong>Ancestors:</strong> Not Available </p>
+                                {% endif %}
+
+                                {% if value.instances %}
+                                <p class="mb-1"><strong>Instances:</strong> {% for instance in value.instances %}{{instance}}{% if not forloop.last%},{% endif%}{% endfor %}</p>
+                                {% else%}
+                                <p class="mb-1"><strong>Instances:</strong> Not Available </p>
+                                {% endif %}
+                        </a>
+
+                </div>
+                {% endfor %}
+        </div>                                
         {% endfor %}
+        {% else %}
+                <div class="h3">
+                               "{{q}}" does not match any term. <br><br>
+                </div>
+        {% endif %}
+
 
 </div>
 <div id="catDiv2" style="display: none;">
